@@ -1,0 +1,161 @@
+; ======================================================
+;
+;	POLYBAR
+;
+;https://github.com/guiemi/i3wm-dotfiles/blob/master/Polybar/config
+; ======================================================
+
+[colors]
+;black
+background	 =	 #000000
+;dark gray 
+foreground	 =	 #444444
+;blue
+foreground-alt	 =	 #0008ff
+;green
+background-alt	 =	 #00ff00
+;yellow
+highlight	 =	 #ffee00
+;purple
+primary		 =	 #d000ff
+;light blue
+secondary 	 =	 #777777
+;red
+alert 		 = 	 #ff0000
+white		 =	 #ffffff
+
+;--------------------------------------
+;	POLYBAR / TOP
+;--------------------------------------
+
+[bar/main]
+
+line-size		= 	1
+border-size		= 	0
+border-color		= 	#00000000
+module-margin-left	= 	0
+module-margin-right	=	0
+
+;	Dimensions
+;---------------------------------------
+width		=	100%
+height		=	20
+offset-y	=	0
+offset-x	=	0
+
+border-top-size		=	0
+border-bottom-size	=	0
+border-right-size	=	0
+border-left-size	=	0
+
+;	Location
+;----------------------------------------
+bottom		=	false
+
+;	Fonts
+;-Font Awesome 4.7
+;-Font Awesome 5
+;	-Can view installed icons by running 'gucharmap' from terminal
+;--------------------------------------------------------------------------
+font-0	=	"Noto Sans: style: Regular: pixelsize = 8.5; 3"
+font-1	=	"Font Awesome 5 Brands:style=Regular:pixelsize=12;3"	
+font-2	=	"Font Awesome 5 Free:style=Solid:pixelsize=12;3"
+font-3	=	"Font Awesome 5 Free:style=Regular:pixelsize=12;3"
+;font-5 	=	"Font Awesome: style = Regular: pixelSize = 9; 3"
+;font-6 	=	"Font Awesome 5 Free: style = Regular: pixelSize = 9; 3"
+
+;	Colors
+;-----------------------------------------
+background	=	${colors.background}
+background-alt	=	${colors.background-alt}
+foreground	=	${colors.foreground}
+foreground-alt	=	${colors.foreground-alt}
+highlight	=	${colors.highlight}
+primary		=	${colors.primary}
+secondary	=	${colors.secondary}
+alert		=	${colors.alert}
+
+;	Bar	
+;----------------------------------------
+modules-left	=	icons	
+;TODO: add clock to center
+modules-center	=	clock
+;TODO: add more modules to right
+;modules-right	=	battery	
+modules-right	=	volume
+
+;	Tray Icons
+;------------------------------------------
+tray-position		=	right
+tray-detached		=	false
+tray-maxsize		=	15
+tray-transparent	=	true
+tray-background		=	${colors.secondary}
+tray-scale		= 	1
+tray-padding		=	1
+
+;	Modules
+;-----------------------------------------
+[module/icons]
+type		=	internal/i3
+format		=	<label-state><label-mode>
+enable-click	=	true
+enable-scroll	=	true
+strip-wsnumbers	=	true
+
+;Puts icons on bars
+ws-icon-0 	=	1;
+ws-icon-1	=	2;
+ws-icon-2	=	3;
+ws-icon-3	=	4;
+ws-icon-4	=	5;
+ws-icon-5	=	6;6
+ws-icon-6	=	7;7
+ws-icon-7	=	8;8
+
+;Sets icon appearance based on state
+label-focused			=	%icon%
+label-focused-foreground	=	${colors.white}
+label-focused-background	=	${colors.background}
+label-focused-padding		=	2
+
+label-unfocused			=	%icon%
+label-unfocused-foreground	=	${colors.foreground}
+label-unfocused-background	=	${colors.background}
+label-unfocused-padding		=	2
+
+label-urgent			= 	%icon%
+label-urgent-foreground		=	${colors.alert}
+label-urgent-padding		=	2
+
+[module/clock]
+type	=	internal/date
+
+;Sets time (%I = hour 01-12 %M = minutes 0-59)
+time	=	%I:%M
+
+label	=	%time%
+
+format			=	<label>
+format-background	=	${colors.background} 
+format-foreground	=	${colors.white}
+
+[module/battery]
+type = internal/battery
+
+full-at = 99
+
+; Find battery and adapter using: 'ls -l /sys/class/power_supply/
+battery 	= 	BAT0
+adapter 	=	ACAD
+
+poll-interval 	=	5
+
+format-charging		=	<label-charging>:)
+format-discharging	=	<label-discharging>
+
+label-charging		=	%percentage%
+label-discharging	=	%percentage%
+
+
+; vim:ft=dosini
