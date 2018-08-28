@@ -1,0 +1,29 @@
+[global_config]
+  borderless = True
+  extra_styling = False
+  title_font = Monospace 9
+  title_use_system_font = False
+[keybindings]
+[layouts]
+  [[default]]
+    [[[child1]]]
+      parent = window0
+      profile = idleToes
+      type = Terminal
+    [[[window0]]]
+      parent = ""
+      type = Window
+[plugins]
+[profiles]
+  [[default]]
+    cursor_color = "#aaaaaa"
+  [[idleToes]]
+    background_color = "#323232"
+    cursor_color = "#d6d6d6"
+    cursor_shape = underline
+    font = Monospace 9
+    foreground_color = "#ffffff"
+    icon_bell = False
+    palette = "#323232:#d25252:#7fe173:#ffc66d:#4099ff:#f680ff:#bed6ff:#eeeeec:#535353:#f07070:#9dff91:#ffe48b:#5eb7f7:#ff9dff:#dcf4ff:#ffffff"
+    show_titlebar = False
+    use_system_font = False
