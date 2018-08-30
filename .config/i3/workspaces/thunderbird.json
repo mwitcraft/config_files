@@ -1,0 +1,65 @@
+// vim:ts=4:sw=4:et
+{
+    "border": "pixel",
+    "current_border_width": 1,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 768,
+       "width": 1024,
+       "x": 0,
+       "y": 0
+    },
+    "name": "Tue 21 Aug 2018 - Mozilla Thunderbird",
+    "percent": 1,
+    "swallows": [
+       {
+       // "class": "^Thunderbird$",
+       // "instance": "^Mail$",
+       // "title": "^Tue\\ 21\\ Aug\\ 2018\\ \\-\\ Mozilla\\ Thunderbird$",
+       // "transient_for": "^$",
+       // "window_role": "^3pane$"
+       }
+    ],
+    "type": "con"
+}
+
+{
+    // floating_con with 1 children
+    "border": "pixel",
+    "floating": "auto_off",
+    "layout": "splith",
+    "percent": null,
+    "rect": {
+       "height": 392,
+       "width": 496,
+       "x": 437,
+       "y": 178
+    },
+    "type": "floating_con",
+    "nodes": [
+        {
+            "border": "normal",
+            "current_border_width": 2,
+            "floating": "user_on",
+            "geometry": {
+               "height": 368,
+               "width": 492,
+               "x": 437,
+               "y": 200
+            },
+            "name": "Mail Account Setup",
+            "percent": 1,
+            "swallows": [
+               {
+               // "class": "^Thunderbird$",
+               // "instance": "^Mail$",
+               // "title": "^Mail\\ Account\\ Setup$",
+               // "transient_for": "^$",
+               // "window_role": "^autoconfig$"
+               }
+            ],
+            "type": "con"
+        }
+    ]
+}
+
