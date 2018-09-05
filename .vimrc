@@ -31,6 +31,8 @@ Plugin 'tpope/vim-surround'
 Plugin 'scrooloose/nerdtree'
 " https://github.com/tomtom/tcomment_vim
 Plugin 'tomtom/tcomment_vim'
+" https://github.com/jiangmiao/auto-pairs
+Plugin 'jiangmiao/auto-pairs'
 
 "All plugins must be added above
 call vundle#end()
