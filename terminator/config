@@ -1,5 +1,4 @@
 [global_config]
-  borderless = True
   extra_styling = False
   title_font = Monospace 9
   title_use_system_font = False

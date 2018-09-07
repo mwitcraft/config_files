@@ -58,10 +58,11 @@ bottom		=	false
 ;	-Can view installed icons by running 'gucharmap' from terminal
 ;--------------------------------------------------------------------------
 font-0	=	"Noto Sans: style: Regular: pixelsize = 8.5; 3"
-font-1	=	"Font Awesome 5 Brands:style=Regular:pixelsize=9;3"	
-font-2	=	"Font Awesome 5 Free:style=Solid:pixelsize=9;3"
-;font-3 	=	"Font Awesome:style = Regular: pixelSize = 9; 3"
-;font-4 	=	"Font Awesome 5 Free: style = Regular: pixelSize = 9; 3"
+font-1	=	"Font Awesome 5 Brands:style=Regular:pixelsize=12;3"	
+font-2	=	"Font Awesome 5 Free:style=Solid:pixelsize=12;3"
+font-3	=	"Font Awesome 5 Free:style=Regular:pixelsize=12;3"
+;font-5 	=	"Font Awesome: style = Regular: pixelSize = 9; 3"
+;font-6 	=	"Font Awesome 5 Free: style = Regular: pixelSize = 9; 3"
 
 ;	Colors
 ;-----------------------------------------
@@ -80,7 +81,8 @@ modules-left	=	icons
 ;TODO: add clock to center
 modules-center	=	clock
 ;TODO: add more modules to right
-modules-right	=	battery	
+;modules-right	=	battery	
+modules-right	=	volume
 
 ;	Tray Icons
 ;------------------------------------------
@@ -103,9 +105,13 @@ strip-wsnumbers	=	true
 
 ;Puts icons on bars
 ws-icon-0 	=	1;
-ws-icon-1	=	2;	
+ws-icon-1	=	2;
 ws-icon-2	=	3;
 ws-icon-3	=	4;
+ws-icon-4	=	5;
+ws-icon-5	=	6;6
+ws-icon-6	=	7;7
+ws-icon-7	=	8;8
 
 ;Sets icon appearance based on state
 label-focused			=	%icon%
@@ -127,7 +133,6 @@ type	=	internal/date
 
 ;Sets time (%I = hour 01-12 %M = minutes 0-59)
 time	=	%I:%M
-interval=	30.0
 
 label	=	%time%
 
@@ -146,10 +151,11 @@ adapter 	=	ACAD
 
 poll-interval 	=	5
 
-format-charging		=	<label-charging>
+format-charging		=	<label-charging>:)
 format-discharging	=	<label-discharging>
 
 label-charging		=	%percentage%
 label-discharging	=	%percentage%
+
 
 ; vim:ft=dosini

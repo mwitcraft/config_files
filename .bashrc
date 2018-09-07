@@ -141,4 +141,15 @@ ex ()
 # better yaourt colors
 export YAOURT_COLORS="nb=1:pkg=1:ver=1;32:lver=1;45:installed=1;42:grp=1;34:od=1;41;5:votes=1;44:dsc=0:other=1;35"
 
+# My changes
+
+# Sets ls to show hidden files
 alias ls='ls -al --color=auto'
+
+# Set default editor to VIM
+export VISUAL=vim
+export EDITOR="$VISUAL"
+
+# Ranger can open with 'r' and exits at current directory
+alias r='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
+alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
