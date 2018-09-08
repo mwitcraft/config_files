@@ -234,8 +234,9 @@ bindsym $mod+0 mode "$mode_system"
 # Sets wallpaper
 exec --no-startup-id nitrogen --restore
 
-# Starts dropbox
+# Startup Applicatons
 exec_always --no-startup-id exec dropbox
+exec_always --no-startup-id exec volumeicon
 
 # Open apps as floating by default
 for_window [class="kate"] floating enable
