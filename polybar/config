@@ -53,16 +53,13 @@ border-left-size	=	0
 bottom		=	false
 
 ;	Fonts
-;-Font Awesome 4.7
 ;-Font Awesome 5
-;	-Can view installed icons by running 'gucharmap' from terminal
 ;--------------------------------------------------------------------------
-font-0	=	"Noto Sans: style: Regular: pixelsize = 8.5; 3"
-font-1	=	"Font Awesome 5 Brands:style=Regular:pixelsize=12;3"	
-font-2	=	"Font Awesome 5 Free:style=Solid:pixelsize=12;3"
-font-3	=	"Font Awesome 5 Free:style=Regular:pixelsize=12;3"
-;font-5 	=	"Font Awesome: style = Regular: pixelSize = 9; 3"
-;font-6 	=	"Font Awesome 5 Free: style = Regular: pixelSize = 9; 3"
+font-0	=	"Noto Sans:style:Regular:pixelsize=8.5;1"
+font-1	=	"Font Awesome 5 Brands:style=Regular:pixelsize=12;1"	
+font-2	=	"Font Awesome 5 Free:style=Solid:pixelsize=10;1"
+font-3	=	"Font Awesome 5 Free:style=Regular:pixelsize=10;1"
+font-4	=	"Noto Sans:style:Regular:pixelsize=15;1"
 
 ;	Colors
 ;-----------------------------------------
@@ -104,14 +101,14 @@ enable-scroll	=	true
 strip-wsnumbers	=	true
 
 ;Puts icons on bars
-ws-icon-0 	=	1;
-ws-icon-1	=	2;
-ws-icon-2	=	3;
-ws-icon-3	=	4;
-ws-icon-4	=	5;
-ws-icon-5	=	6;6
-ws-icon-6	=	7;7
-ws-icon-7	=	8;8
+ws-icon-0 	=	1;1. 
+ws-icon-1	=	2;2. 
+ws-icon-2	=	3;3. 
+ws-icon-3	=	4;4. 
+ws-icon-4	=	5;5. 
+ws-icon-5	=	6;6. 
+ws-icon-6	=	7;7. 
+ws-icon-7	=	8;8. 
 
 ;Sets icon appearance based on state
 label-focused			=	%icon%
@@ -136,7 +133,7 @@ time	=	%I:%M
 
 label	=	%time%
 
-format			=	<label>
+format			=	%{T5}<label>%{T-}
 format-background	=	${colors.background} 
 format-foreground	=	${colors.white}
 
