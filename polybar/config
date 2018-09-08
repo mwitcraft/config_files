@@ -79,7 +79,7 @@ modules-left	=	icons
 modules-center	=	clock
 ;TODO: add more modules to right
 ;modules-right	=	battery	
-modules-right	=	volume
+modules-right	=	spotify
 
 ;	Tray Icons
 ;------------------------------------------
@@ -154,5 +154,14 @@ format-discharging	=	<label-discharging>
 label-charging		=	%percentage%
 label-discharging	=	%percentage%
 
+[module/spotify]
+type = custom/script
 
+interval = 1
+format-prefix =  
+format = <label>
+exec = python /home/mason/.config/polybar/scripts/polybar-spotify/spotify_status.py -f ' {artist}: {song}'
+format-foreground = ${colors.white}
+format-underline = #1db954
+format-margin = 10
 ; vim:ft=dosini
