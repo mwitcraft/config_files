@@ -1,0 +1,33 @@
+# My custom keymap for atom
+
+# Want to be able to control atom using a mod key to navigate similar to
+# how i3 uses a universal mod key.
+# For now, atom's mod key is 'alt'
+# Navigation is to be similar to vim.
+
+# Map 'jj' to esc while in insert mode
+'atom-text-editor.vim-mode-plus.insert-mode':
+  'j j': 'vim-mode-plus:activate-normal-mode'
+
+# Cycle through tabs using vim like commands
+'body':
+  'alt-l': 'pane:show-next-item'
+  'alt-h': 'pane:show-previous-item'
+  'alt-space': 'window:focus-next-pane'
+
+# Focus tree view using alt+n
+'.platform-win32, .platform-linux':
+  'alt-n': 'tree-view:toggle-focus'
+
+# Scroll up and down
+'atom-text-editor.vim-mode-plus:not(.insert-mode)':
+  'alt-k': 'vim-mode-plus:mini-scroll-up'
+  'alt-j': 'vim-mode-plus:mini-scroll-down'
+
+# Toggle terminal with alt+t
+'.platform-linux atom-workspace, .platform-win32 atom-workspace':
+  'alt-t': 'platformio-ide-terminal:toggle'
+
+# Comment line out with alt+/
+'atom-workspace atom-text-editor:not([mini])':
+  'alt-/': 'editor:toggle-line-comments'
