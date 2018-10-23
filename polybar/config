@@ -8,7 +8,7 @@
 [colors]
 ;black
 background	 =	 #000000
-;dark gray 
+;dark gray
 foreground	 =	 #444444
 ;blue
 foreground-alt	 =	 #0008ff
@@ -56,7 +56,7 @@ bottom		=	false
 ;-Font Awesome 5
 ;--------------------------------------------------------------------------
 font-0	=	"Noto Sans:style:Regular:pixelsize=8.5;1"
-font-1	=	"Font Awesome 5 Brands:style=Regular:pixelsize=12;1"	
+font-1	=	"Font Awesome 5 Brands:style=Regular:pixelsize=12;1"
 font-2	=	"Font Awesome 5 Free:style=Solid:pixelsize=10;1"
 font-3	=	"Font Awesome 5 Free:style=Regular:pixelsize=10;1"
 font-4	=	"Noto Sans:style:Regular:pixelsize=15;1"
@@ -72,13 +72,13 @@ primary		=	${colors.primary}
 secondary	=	${colors.secondary}
 alert		=	${colors.alert}
 
-;	Bar	
+;	Bar
 ;----------------------------------------
-modules-left	=	icons	
+modules-left	=	icons
 ;TODO: add clock to center
 modules-center	=	clock
 ;TODO: add more modules to right
-;modules-right	=	battery	
+;modules-right	=	battery
 modules-right	=	spotify
 
 ;	Tray Icons
@@ -101,14 +101,14 @@ enable-scroll	=	true
 strip-wsnumbers	=	true
 
 ;Puts icons on bars
-ws-icon-0 	=	1;1. 
-ws-icon-1	=	2;2. 
-ws-icon-2	=	3;3. 
-ws-icon-3	=	4;4. 
-ws-icon-4	=	5;5. ; 
-ws-icon-5	=	6;6. 
-ws-icon-6	=	7;7. 
-ws-icon-7	=	8;8. 
+ws-icon-0 =	1;1. ;
+ws-icon-1	=	2;2. ;
+ws-icon-2	=	3;3. ;
+ws-icon-3	=	4;4. ;
+ws-icon-4	=	5;5. ;
+ws-icon-5	=	6;6. ;
+ws-icon-6	=	7;7.
+ws-icon-7	=	8;8.
 
 ;Sets icon appearance based on state
 label-focused			=	%icon%
@@ -134,7 +134,7 @@ time	=	%I:%M
 label	=	%time%
 
 format			=	%{T5}<label>%{T-}
-format-background	=	${colors.background} 
+format-background	=	${colors.background}
 format-foreground	=	${colors.white}
 
 [module/battery]
@@ -158,7 +158,7 @@ label-discharging	=	%percentage%
 type = custom/script
 
 interval = 1
-format-prefix =  
+format-prefix = 
 format = <label>
 exec = python /home/mason/.config/polybar/scripts/polybar-spotify/spotify_status.py -f ' {artist}: {song}'
 format-foreground = ${colors.white}

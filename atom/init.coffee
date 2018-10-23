@@ -5,3 +5,4 @@ atom.packages.onDidActivatePackage (pack) ->
     Ex = pack.mainModule.provideEx()
     # Creates new file with 'new' command
     Ex.registerCommand 'new', -> atom.commands.dispatch(atom.workspace.getActiveTextEditor().element, 'application:new-file')
+    Ex.registerCommand 'spl', -> atom.commands.dispatch(atom.workspace.getActiveTextEditor().element, 'pane:split-right-and-copy-active-item')

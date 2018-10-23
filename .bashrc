@@ -153,3 +153,11 @@ export EDITOR="$VISUAL"
 # Ranger can open with 'r' and exits at current directory
 alias r='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
+
+# Sublime text opens with 'sim'
+alias sim="subl3"
+
+# Connects to Intro-OS GCP Instance
+alias goog="ssh mason@35.224.125.161"
+
+alias gentar="tar -zcvf"

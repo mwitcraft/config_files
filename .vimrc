@@ -33,6 +33,10 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'tomtom/tcomment_vim'
 " https://github.com/jiangmiao/auto-pairs
 Plugin 'jiangmiao/auto-pairs'
+" https://github.com/Valloric/YouCompleteMe
+Plugin 'Valloric/YouCompleteMe'
+" https://github.com/rdnetto/YCM-Generator
+Plugin 'rdnetto/YCM-Generator'
 
 "All plugins must be added above
 call vundle#end()
@@ -56,3 +60,9 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 let NERDTreeShowHidden=1
 " When NerdTree is toggled, it opens the current file location
 autocmd BufEnter * lcd %:p:h
+
+" Default conf plugin for YouCompleteMe
+let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
+
+:nnoremap <C-l> :bnext<CR>
+:nnoremap <C-h> :bprevious<CR>

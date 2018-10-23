@@ -30,7 +30,7 @@ font pango:monospace 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec terminator 
+bindsym $mod+Return exec terminator
 
 # kill focused window
 bindsym $mod+q kill
@@ -87,7 +87,7 @@ bindsym $mod+e layout toggle split
 bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+# bindsym $mod+space focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
@@ -195,7 +195,7 @@ bindsym $mod+Mod2+KP_8 workspace $ws8
   client.focused_inactive #2F3D44 #2F3D44 #1ABC9C #454948
   client.unfocused        #2F3D44 #2F3D44 #1ABC9C #454948
   client.urgent           #CB4B16 #FDF6E3 #1ABC9C #268BD2
-  client.placeholder      #000000 #0c0c0c #ffffff #000000 
+  client.placeholder      #000000 #0c0c0c #ffffff #000000
 
   client.background #2B2C2B
 
@@ -215,21 +215,21 @@ exec_always --no-startup-id exec compton
 # Removes border except for thin outline (for focus)
 for_window [class="^.*"] border pixel 1
 
-# Keyboard shortcut to logout, reboot, or shutdown 
+# Keyboard shortcut to logout, reboot, or shutdown
 set $Locker i3lock && sleep 1
 
 set $mode_system System (l)ogout, (r)eboot, (s)hutdown
 mode "$mode_system" {
     bindsym l exec --no-startup-id i3-msg exit, mode "default"
     bindsym r exec --no-startup-id systemctl reboot, mode "default"
-    bindsym s exec --no-startup-id systemctl poweroff, mode "default"  
+    bindsym s exec --no-startup-id systemctl poweroff, mode "default"
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
 
-bindsym $mod+0 mode "$mode_system" 
+bindsym $mod+0 mode "$mode_system"
 
 # Sets wallpaper
 exec --no-startup-id nitrogen --restore
@@ -237,6 +237,7 @@ exec --no-startup-id nitrogen --restore
 # Startup Applicatons
 exec_always --no-startup-id exec dropbox
 exec_always --no-startup-id exec volumeicon
+exec_always --no-startup-id exec nm-applet
 
 # Open apps as floating by default
 for_window [class="kate"] floating enable
@@ -249,10 +250,18 @@ bindsym $mod+Tab workspace next
 
 # Open applications on startup
 exec --no-startup-id "i3-msg 'workspace 1; exec firefox'"
-exec --no-startup-id "i3-msg 'workspace 2; exec terminator'"
-exec --no-startup-id "i3-msg 'workspace 3; exec mailspring'"
+exec --no-startup-id "i3-msg 'workspace 2; exec atom'"
+exec --no-startup-id "i3-msg 'workspace 3; exec terminator'"
+# exec --no-startup-id "i3-msg 'workspace 4; exec mailspring'"
 # exec --no-startup-id "i3-msg 'workspace 4; exec spotify'"
 
 # Set keybindings on startup
 exec --no-startup-id "i3-msg 'exec xmodmap ~/.Xmodmap'"
 
+# Change window focus
+bindsym $mod+space focus left
+
+# Start dunst on boot
+# kill default notification daemon
+exec --no-startup-id "i3-msg 'exec killall dde-osd'"
+exec --no-startup-id "i3-msg 'exec dunst'"
