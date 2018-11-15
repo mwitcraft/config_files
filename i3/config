@@ -249,9 +249,9 @@ bindsym $mod+h workspace prev
 bindsym $mod+Tab workspace next
 
 # Open applications on startup
-exec --no-startup-id "i3-msg 'workspace 1; exec firefox'"
-exec --no-startup-id "i3-msg 'workspace 2; exec atom'"
-exec --no-startup-id "i3-msg 'workspace 3; exec terminator'"
+# exec --no-startup-id "i3-msg 'workspace 1; exec firefox'"
+# exec --no-startup-id "i3-msg 'workspace 2; exec atom'"
+# exec --no-startup-id "i3-msg 'workspace 3; exec terminator'"
 # exec --no-startup-id "i3-msg 'workspace 4; exec mailspring'"
 # exec --no-startup-id "i3-msg 'workspace 4; exec spotify'"
 
@@ -265,3 +265,7 @@ bindsym $mod+space focus left
 # kill default notification daemon
 exec --no-startup-id "i3-msg 'exec killall dde-osd'"
 exec --no-startup-id "i3-msg 'exec dunst'"
+
+# Scratchpad trial
+bindsym $mod+Shift+minus move scratchpad
+bindsym $mod+minus scratchpad show
