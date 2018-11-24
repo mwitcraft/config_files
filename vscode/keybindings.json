@@ -1,0 +1,27 @@
+// Place your key bindings in this file to overwrite the defaults
+[
+    {
+        "key": "alt+f",
+        "command": "workbench.view.explorer"
+    },
+    {
+        "key": "ctrl+shift+e",
+        "command": "-workbench.view.explorer"
+    },
+    {
+        "key": "alt+p",
+        "command": "workbench.action.showCommands"
+    },
+    {
+        "key": "ctrl+shift+p",
+        "command": "workbench.action.showCommands"
+    },
+    {
+        "key": "alt+h",
+        "command": "workbench.action.previousEditor"
+    },
+    {
+        "key": "alt+l",
+        "command": "workbench.action.nextEditor"
+    }
+]
