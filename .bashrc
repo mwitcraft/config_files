@@ -158,6 +158,6 @@ alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir
 alias sim="subl3"
 
 # Connects to Intro-OS GCP Instance
-alias goog="ssh mason@35.224.125.161"
+alias goog="ssh masonwitcraft@35.224.125.161"
 
 alias gentar="tar -zcvf"

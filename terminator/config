@@ -17,7 +17,7 @@
   [[default]]
     cursor_color = "#aaaaaa"
   [[idleToes]]
-    background_color = "#323232"
+    background_color = "#2b303b"
     cursor_color = "#d6d6d6"
     cursor_shape = underline
     font = Monospace 9

@@ -33,10 +33,6 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'tomtom/tcomment_vim'
 " https://github.com/jiangmiao/auto-pairs
 Plugin 'jiangmiao/auto-pairs'
-" https://github.com/Valloric/YouCompleteMe
-Plugin 'Valloric/YouCompleteMe'
-" https://github.com/rdnetto/YCM-Generator
-Plugin 'rdnetto/YCM-Generator'
 
 "All plugins must be added above
 call vundle#end()

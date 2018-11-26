@@ -267,8 +267,13 @@ bindsym $mod+space focus left
 exec --no-startup-id "i3-msg 'exec killall dde-osd'"
 exec --no-startup-id "i3-msg 'exec dunst'"
 
+<<<<<<< HEAD
 # Make the currently focused window a scratchpad
 bindsym $mod+Shift+minus move scratchpad
 
 # Show the first scratchpad window
+=======
+# Scratchpad trial
+bindsym $mod+Shift+minus move scratchpad
+>>>>>>> e7538ae4443915103a4abdf1385fb35f355f61e2
 bindsym $mod+minus scratchpad show
