@@ -1,68 +1,47 @@
-" Vim Config File
-" Following Instructions from here: https://realpython.com/vim-and-python-a-match-made-in-heaven/#nix-linux
-" Currently at AutoComplete
-
+" Set beginning options
 set nocompatible
-filetype off
+set rtp +=~/.vim/bundle/Vundle.vim
+filetype indent plugin on
+syntax on
 
-" Settings
-" ----------------------------------------
+"----------------Custom behavior / Configs ------------------------------
+"Maps jj to 'Esc'
+    inoremap jj <Esc>
+"Shows line numbers
+    set number
+"Show gutter
+    set signcolumn="yes"
+"Set space to leader
+    nnoremap <SPACE> <Nop>
+    let mapleader=" "
+"------------------------------------------------------------------------
 
-" Enable syntax highlighting
-syntax enable
+"----------------Indentation Rules---------------------------------------
+"Default :
+    "Width of tab is set to 4
+        set tabstop=4
+    "Indents have width of 4
+        set shiftwidth=4
+    "Sets number of columns for a tab
+        set softtabstop=4
+    "Expands tabs to spaces
+        set expandtab
+"------------------------------------------------------------------------
 
-"Set encoding
-set encoding=utf-8
+"----------------Plugin Install------------------------------------------
+"Open vundle
+    call vundle#begin() 
+"Required for vundle
+    Plugin 'VundleVim/Vundle.vim'
+"My Plugins
+    "File explorer
+        Plugin 'scrooloose/nerdtree'
+"Close vundle
+    call vundle#end()
+"------------------------------------------------------------------------
 
-" Set line numbers
-set number
-
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-
-" Saves packages to ~/.vim/packages
-call vundle#begin('~/.vim/packages/')
-Plugin 'gmarik/Vundle.vim'
-
-" Add all plugins below
-" https://github.com/tpope/vim-surround
-Plugin 'tpope/vim-surround'
-" https://github.com/scrooloose/nerdtree
-Plugin 'scrooloose/nerdtree'
-" https://github.com/tomtom/tcomment_vim
-Plugin 'tomtom/tcomment_vim'
-" https://github.com/jiangmiao/auto-pairs
-Plugin 'jiangmiao/auto-pairs'
-" https://github.com/Valloric/YouCompleteMe
-Plugin 'Valloric/YouCompleteMe'
-" https://github.com/rdnetto/YCM-Generator
-Plugin 'rdnetto/YCM-Generator'
-
-"All plugins must be added above
-call vundle#end()
-filetype plugin indent on
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""
-"	Customization of plugins and vim behavior
-"""""""""""""""""""""""""""""""""""""""""""""""""""
-" Map jj to Escape
-inoremap jj <ESC>
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""
-"	NerdTree
-"""""""""""""""""""""""""""""""""""""""""""""""""""
-" Toggles NerdTree with Ctrl-n
-map <C-n> :NERDTreeToggle<CR>
-" Closes NerdTree if it is last tab open
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-" Shows hidden files
-let NERDTreeShowHidden=1
-" When NerdTree is toggled, it opens the current file location
-autocmd BufEnter * lcd %:p:h
-
-" Default conf plugin for YouCompleteMe
-let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
-
-:nnoremap <C-l> :bnext<CR>
-:nnoremap <C-h> :bprevious<CR>
+"----------------Plugin Behavior-----------------------------------------
+"NerdTree
+    "Toggle NerdTree with Space-n
+        nmap <leader>n :NERDTreeToggle<cr>
+"------------------------------------------------------------------------
