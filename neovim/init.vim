@@ -17,6 +17,8 @@ syntax on
     let mapleader=" "
 "Navigate windows with leader-w instead of ctrl-w
     noremap <leader>w <C-w>
+"Scrolls when within 5 lines of top or bottom
+    set scrolloff=5
 "------------------------------------------------------------------------
 
 "----------------Indentation Rules---------------------------------------
@@ -49,8 +51,14 @@ syntax on
         Plugin 'roxma/vim-hug-neovim-rpc'
     "Autocomplete for C/C++
         Plugin 'Shougo/deoplete-clangx'
-    "Themes
+    "Themes - Currently not in use
         Plugin 'rafi/awesome-vim-colorschemes'
+    "Statusbar
+        Plugin 'vim-airline/vim-airline'
+    "Statusbar Themes
+        Plugin 'vim-airline/vim-airline-themes'
+    "More Themes - Currently using
+        Plugin 'NLKNguyen/papercolor-theme'
 "Close vundle
     call vundle#end()
 "------------------------------------------------------------------------
@@ -66,5 +74,7 @@ syntax on
 
 "Theme
     "Enables Theme
-        colorscheme nord 
+        colorscheme PaperColor 
+    "Status bar Theme
+        let g:airline_theme='papercolor'
 "------------------------------------------------------------------------
