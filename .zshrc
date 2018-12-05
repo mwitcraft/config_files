@@ -64,12 +64,7 @@ ZSH_THEME="robbyrussell"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
-  colored-man-pages
-  colorize
   extract
-  cp
-  kate
-  zsh-autosuggestions
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -102,7 +97,14 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-alias ls="ls -al --color=auto"
-alias gcp="ssh masonwitcraft@35.224.125.161"
 
-export EDITOR=vim
+# ls lists all files, even hidden one
+alias ls="ls -al --color=auto"
+# on exit, cwd of terminal will be where ranger exited
+alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
+alias r='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
+alias goog='ssh mason@35.224.125.161'
+alias vim='nvim'
+
+export EDITOR='nvim'
+export VISUAL='nvim'
