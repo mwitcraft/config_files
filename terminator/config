@@ -1,13 +1,16 @@
 [global_config]
-  extra_styling = False
-  title_font = Monospace 9
-  title_use_system_font = False
+  title_inactive_bg_color = "#4C566A"
+  title_inactive_fg_color = "#D8DEE9"
+  title_receive_bg_color = "#8FBCBB"
+  title_receive_fg_color = "#2E3440"
+  title_transmit_bg_color = "#88C0D0"
+  title_transmit_fg_color = "#2E3440"
 [keybindings]
 [layouts]
   [[default]]
     [[[child1]]]
       parent = window0
-      profile = material-light 
+      profile = material-light
       type = Terminal
     [[[window0]]]
       parent = ""
@@ -16,19 +19,29 @@
 [profiles]
   [[default]]
     cursor_color = "#aaaaaa"
-  [[idleToes]]
-    background_color = "#2e2e2d"
-    cursor_color = "#25C3DC"
-    foreground_color = "#f2f2f2"
-    palette = "#2c2c2c:#c62828:#558b2e:#f9a825:#1565c1:#6a1e9a:#00838f:#ffffff:#969694:#f15250:#86bd47:#f8e63a:#77b2f6:#b963c8:#25c3dc:#ffffff"
-    show_titlebar = False
-    use_system_font = False
+  [[gruvbox-dark]]
+    background_color = "#282828"
+    cursor_color = "#7c6f64"
+    foreground_color = "#ebdbb2"
+    palette = "#181818:#cc241d:#98971a:#d79921:#458588:#b16286:#689d6a:#a89984:#928374:#fb4934:#b8bb26:#fabd2f:#83a598:#d3869b:#8ec07c:#ebdbb2"
+  [[gruvbox-light]]
+    background_color = "#eee8d5"
+    cursor_color = "#002b36"
+    foreground_color = "#002b36"
+    palette = "#073642:#dc322f:#859900:#b58900:#268bd2:#d33682:#2aa198:#eee8d5:#002b36:#cb4b16:#586e75:#657b83:#839496:#6c71c4:#93a1a1:#fdf6e3"
   [[material-dark]]
     cursor_color = "#aaaaaa"
+    scrollbar_position = hidden
   [[material-light]]
     background_color = "#eeeeee"
     cursor_color = "#25C3DC"
     foreground_color = "#3c3c3b"
     palette = "#f8f8f8:#d7005f:#718c00:#ff8f01:#005f87:#6a1e9a:#3e999f:#2c2c2c:#2c2c2c:#ef5251:#90c94d:#ffa000:#4271ae:#c774c1:#3e999f:#f5f5f5"
+    scrollbar_position = hidden
     show_titlebar = False
     use_system_font = False
+  [[nord]]
+    background_color = "#2E3440"
+    cursor_color = "#D8DEE9"
+    foreground_color = "#D8DEE9"
+    palette = "#3B4252:#BF616A:#A3BE8C:#EBCB8B:#81A1C1:#B48EAD:#88C0D0:#E5E9F0:#4C566A:#BF616A:#A3BE8C:#EBCB8B:#81A1C1:#B48EAD:#8FBCBB:#ECEFF4"

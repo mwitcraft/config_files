@@ -30,7 +30,7 @@ font pango:monospace 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec terminator
+bindsym $mod+Return exec termite
 
 # kill focused window
 bindsym $mod+q kill
@@ -79,9 +79,9 @@ bindsym $mod+Shift+v split v
 bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+# bindsym $mod+s layout stacking
+# bindsym $mod+w layout tabbed
+# bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -267,13 +267,8 @@ bindsym $mod+space focus left
 exec --no-startup-id "i3-msg 'exec killall dde-osd'"
 exec --no-startup-id "i3-msg 'exec dunst'"
 
-<<<<<<< HEAD
 # Make the currently focused window a scratchpad
 bindsym $mod+Shift+minus move scratchpad
 
 # Show the first scratchpad window
-=======
-# Scratchpad trial
-bindsym $mod+Shift+minus move scratchpad
->>>>>>> e7538ae4443915103a4abdf1385fb35f355f61e2
 bindsym $mod+minus scratchpad show

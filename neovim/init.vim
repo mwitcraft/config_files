@@ -51,14 +51,14 @@ syntax on
         Plugin 'roxma/vim-hug-neovim-rpc'
     "Autocomplete for C/C++
         Plugin 'Shougo/deoplete-clangx'
-    "Themes - Currently not in use
-        Plugin 'rafi/awesome-vim-colorschemes'
     "Statusbar
         Plugin 'vim-airline/vim-airline'
     "Statusbar Themes
         Plugin 'vim-airline/vim-airline-themes'
     "More Themes - Currently using
         Plugin 'NLKNguyen/papercolor-theme'
+    "Nord Theme
+        Plugin 'arcticicestudio/nord-vim'
 "Close vundle
     call vundle#end()
 "------------------------------------------------------------------------
@@ -74,7 +74,7 @@ syntax on
 
 "Theme
     "Enables Theme
-        colorscheme PaperColor 
+        colorscheme nord 
     "Status bar Theme
-        let g:airline_theme='papercolor'
+        let g:airline_theme='nord'
 "------------------------------------------------------------------------
