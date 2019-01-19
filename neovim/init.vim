@@ -19,6 +19,11 @@ syntax on
     noremap <leader>w <C-w>
 "Scrolls when within 5 lines of top or bottom
     set scrolloff=5
+"Cycle through buffers with Left and Right arrow keys, or Ctrl l or h
+    nnoremap <Right> :bnext<CR>
+    nnoremap <Left> :bprevious<CR>
+    nnoremap <C-l> :bnext<CR>
+    nnoremap <C-h> :bprevious<CR>
 "------------------------------------------------------------------------
 
 "----------------Indentation Rules---------------------------------------
