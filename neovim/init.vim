@@ -35,7 +35,7 @@ syntax on
 
 "----------------Plugin Install------------------------------------------
 "Open vundle
-    call vundle#begin('~/.config/nvim/bundle') 
+    call vundle#begin('~/.config/nvim/bundle')
 "Required for vundle
     Plugin 'VundleVim/Vundle.vim'
 "My Plugins
@@ -55,9 +55,9 @@ syntax on
         Plugin 'vim-airline/vim-airline'
     "Statusbar Themes
         Plugin 'vim-airline/vim-airline-themes'
-    "More Themes - Currently using
+    "More Themes
         Plugin 'NLKNguyen/papercolor-theme'
-    "Nord Theme
+    "Nord Theme - Currently Using
         Plugin 'arcticicestudio/nord-vim'
 "Close vundle
     call vundle#end()
@@ -74,7 +74,7 @@ syntax on
 
 "Theme
     "Enables Theme
-        colorscheme nord 
+        colorscheme nord
     "Status bar Theme
         let g:airline_theme='nord'
 "------------------------------------------------------------------------
