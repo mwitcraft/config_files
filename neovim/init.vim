@@ -77,6 +77,11 @@ syntax on
     "Enable Deoplete
         let g:deoplete#enable_at_startup = 1
 
+"Airline
+    "Enable tabline
+        let g:airline#extensions#tabline#enabled = 1
+        let g:airline#extensions#tabline#show_buffers = 1
+
 "Theme
     "Enables Theme
         colorscheme nord
