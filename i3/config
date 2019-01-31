@@ -161,9 +161,9 @@ bindsym $mod+0 mode "$mode_system"
 
 exec_always --no-startup-id exec compton
 exec_always --no-startup-id exec dropbox
-exec_always --no-startup-id exec pulseaudio
-exec_always --no-startup-id exec pasystray
 exec_always --no-startup-id exec nm-applet
+exec_always --no-startup-id exec pulseaudio --kill
+exec_always --no-startup-id exec pulseaudio --start
 
 # Starts polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
@@ -198,3 +198,6 @@ exec --no-startup-id nitrogen --restore
 # Open apps as floating by default
 for_window [class="kate"]                   floating enable
 for_window [class="x-terminal-emulator"]    floating enable
+for_window [class="mousepad"]               floating enable
+for_window [class="Nm-connection-editor"]   floating enable
+for_window [class="Pavucontrol"]            floating enable
