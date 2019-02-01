@@ -6,23 +6,15 @@
 ; ======================================================
 
 [colors]
-;black
-background	 =	 #2e3440
-;dark gray
-foreground	 =	 #575f72
-;blue
-foreground-alt	 =	 #0008ff
-;green
-background-alt	 =	 #00ff00
-;yellow
-highlight	 =	 #ffee00
-;purple
-primary		 =	 #d000ff
-;light blue
-secondary 	 =	 #777777
-;red
-alert 		 = 	 #ff0000
-white		 =	 #ffffff
+background	    =	 #2e3440
+foreground	    =	 #575f72
+foreground-alt  =	 #0008ff
+background-alt	=	 #00ff00
+highlight	    =	 #ffee00
+primary		    =	 #d000ff
+secondary 	    =	 #777777
+alert 		    = 	 #ff0000
+white		    =	 #ffffff
 
 ;--------------------------------------
 ;	POLYBAR / TOP
@@ -30,18 +22,18 @@ white		 =	 #ffffff
 
 [bar/main]
 
-line-size		= 	1
-border-size		= 	0
+line-size		    = 	1
+border-size		    = 	0
 border-color		= 	#00000000
-module-margin-left	= 	0
-module-margin-right	=	0
+module-margin-left	= 	2
+module-margin-right	=	2
 
 ;	Dimensions
 ;---------------------------------------
-width		=	100%
-height		=	20
-offset-y	=	0
-offset-x	=	0
+width		        =	100%
+height		        =	20
+offset-y	        =	0
+offset-x	        =	0
 
 border-top-size		=	0
 border-bottom-size	=	0
@@ -50,7 +42,7 @@ border-left-size	=	0
 
 ;	Location
 ;----------------------------------------
-bottom		=	false
+bottom		        =	false
 
 ;	Fonts
 ;-Font Awesome 5
@@ -63,65 +55,56 @@ font-4	=	"Noto Sans:style:Regular:pixelsize=15;1"
 
 ;	Colors
 ;-----------------------------------------
-background	=	${colors.background}
+background	    =	${colors.background}
 background-alt	=	${colors.background-alt}
-foreground	=	${colors.foreground}
+foreground	    =	${colors.foreground}
 foreground-alt	=	${colors.foreground-alt}
-highlight	=	${colors.highlight}
-primary		=	${colors.primary}
-secondary	=	${colors.secondary}
-alert		=	${colors.alert}
+highlight	    =	${colors.highlight}
+primary		    =	${colors.primary}
+secondary	    =	${colors.secondary}
+alert		    =	${colors.alert}
 
 ;	Bar
 ;----------------------------------------
-modules-left	=	icons
-;TODO: add clock to center
-modules-center	=	clock
-;TODO: add more modules to right
-;modules-right	=	battery
-modules-right	=	spotify
+padding-left    = 0
+padding-right   = 2
 
-;	Tray Icons
-;------------------------------------------
-tray-position		=	right
-tray-detached		=	false
-tray-maxsize		=	15
-tray-transparent	=	false
-tray-background		=	${colors.background}
-tray-scale		    = 	1
-tray-padding		=	1
+modules-left    =   icons
+modules-center  =   clock
+modules-right   =   volume battery wifi date
+
 
 ;	Modules
 ;-----------------------------------------
 [module/icons]
-type		=	internal/i3
-format		=	<label-state><label-mode>
+type		    =	internal/i3
+format		    =	<label-state><label-mode>
 enable-click	=	true
 enable-scroll	=	true
 strip-wsnumbers	=	true
 
 ;Puts icons on bars
-ws-icon-0    =	1;1. ;
-ws-icon-1	=	2;2. ;
-ws-icon-2	=	3;3. ;
-ws-icon-3	=	4;4. ;
-ws-icon-4	=	5;5. ;
-ws-icon-5	=	6;6. ;
-ws-icon-6	=	7;7.
-ws-icon-7	=	8;8.
+ws-icon-0       =	1;1. ;
+ws-icon-1	    =	2;2. ;
+ws-icon-2	    =	3;3. ;
+ws-icon-3	    =	4;4. ;
+ws-icon-4	    =	5;5. ;
+ws-icon-5	    =	6;6. ;
+ws-icon-6	    =	7;7.
+ws-icon-7	    =	8;8.
 
 ;Sets icon appearance based on state
-label-focused			=	%icon%
+label-focused			    =	%icon%
 label-focused-foreground	=	${colors.white}
 label-focused-background	=	${colors.background}
 label-focused-padding		=	2
 
-label-unfocused			=	%icon%
+label-unfocused			    =	%icon%
 label-unfocused-foreground	=	${colors.foreground}
 label-unfocused-background	=	${colors.background}
 label-unfocused-padding		=	2
 
-label-urgent			= 	%icon%
+label-urgent			    = 	%icon%
 label-urgent-foreground		=	${colors.alert}
 label-urgent-padding		=	2
 
@@ -130,38 +113,57 @@ type	=	internal/date
 
 ;Sets time (%I = hour 01-12 %M = minutes 0-59)
 time	=	%I:%M
-
 label	=	%time%
 
-format			=	%{T5}<label>%{T-}
-format-background	=	${colors.background}
-format-foreground	=	${colors.white}
+;%{T5}<text>%{T-} makes text use the 5th font from above
+format			    =   %{T5}<label>%{T-}
+format-foreground   =   ${colors.white}
 
 [module/battery]
 type = internal/battery
 
-full-at = 99
 
 ; Find battery and adapter using: 'ls -l /sys/class/power_supply/
-battery 	= 	BAT0
-adapter 	=	ACAD
+battery 	    = 	BAT0
+adapter 	    =	ACAD
 
-poll-interval 	=	5
+full-at         =   99
+poll-interval 	=   5
 
-format-charging		=	<label-charging>:)
-format-discharging	=	<label-discharging>
+format-charging		=	<label-charging>% 
+format-discharging	=	<label-discharging>% 
+format-full         =   <label-full>% 
 
-label-charging		=	%percentage%
-label-discharging	=	%percentage%
+label-charging		=	%percentage%
+label-discharging	=	%percentage%
+label-full          =   %percentage%
 
-[module/spotify]
-type = custom/script
 
-interval = 1
-format-prefix = 
-format = <label>
-exec = python /home/mason/.config/polybar/scripts/polybar-spotify/spotify_status.py -f ' {artist}: {song}'
-format-foreground = ${colors.white}
-format-underline = #1db954
-format-margin = 10
+[module/volume]
+type = internal/volume
+
+;The %{A3:'command':}<text>%{A} makes the text clickable (with right click) and runs 'command'
+;Taken from: https://github.com/jaagr/polybar/wiki/Formatting#action-a
+format-volume   =  %{A3:pavucontrol:} <label-volume>  %{A}
+format-muted    =  %{A3:pavucontrol:} 0%  %{A}
+
+[module/wifi]
+type = internal/network
+
+interface   = wlo1
+interval    = 5
+
+format-connected    =   <label-connected>
+format-disconnected =   <label-disconnected>
+
+;The %{A3:'command':}<text>%{A} makes the text clickable (with right click) and runs 'command'
+;Taken from: https://github.com/jaagr/polybar/wiki/Formatting#action-a
+label-connected     =   %{A3:nm-connection-editor:} %essid%  %{A}
+label-disconnected  =   %{A3:nm-connection-editor:} Disconnected  %{A}
+
+[module/date]
+type = internal/date
+
+date    =   %m/%d/%y
+format  =   <date> 
 ; vim:ft=dosini

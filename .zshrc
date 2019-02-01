@@ -105,6 +105,7 @@ alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir
 alias r='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 alias goog='ssh mason@35.224.125.161'
 alias vim='nvim'
+alias sound='pulseaudio --kill; pulseaudio --start; pasystray'
 
 export EDITOR='nvim'
 export VISUAL='nvim'
