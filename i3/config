@@ -161,7 +161,8 @@ bindsym $mod+0 mode "$mode_system"
 
 exec_always --no-startup-id exec compton
 exec_always --no-startup-id exec dropbox
-exec_always --no-startup-id exec pulseaudio
+exec_always --no-startup-id exec pulseaudio --kill
+exec_always --no-startup-id exec pulseaudio --start
 exec_always --no-startup-id exec pasystray
 exec_always --no-startup-id exec nm-applet
 

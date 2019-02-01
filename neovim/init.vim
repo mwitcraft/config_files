@@ -64,6 +64,8 @@ syntax on
         Plugin 'NLKNguyen/papercolor-theme'
     "Nord Theme - Currently Using
         Plugin 'arcticicestudio/nord-vim'
+    "R Plugin
+        Plugin 'jalvesaq/Nvim-R'
 "Close vundle
     call vundle#end()
 "------------------------------------------------------------------------
