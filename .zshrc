@@ -101,11 +101,10 @@ source $ZSH/oh-my-zsh.sh
 # ls lists all files, even hidden one
 alias ls="ls -al --color=auto"
 # on exit, cwd of terminal will be where ranger exited
-alias ranger='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
-alias r='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
+alias r='ranger'
 alias goog='ssh mason@35.224.125.161'
 alias vim='nvim'
-alias sound='pulseaudio --kill; pulseaudio --start; pasystray'
+alias sound='pulseaudio --kill; pulseaudio --start'
 
 export EDITOR='nvim'
 export VISUAL='nvim'
