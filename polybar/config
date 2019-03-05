@@ -158,8 +158,10 @@ format-disconnected =   <label-disconnected>
 
 ;The %{A3:'command':}<text>%{A} makes the text clickable (with right click) and runs 'command'
 ;Taken from: https://github.com/jaagr/polybar/wiki/Formatting#action-a
-label-connected     =   %{A3:nm-connection-editor:} %essid%  %{A}
-label-disconnected  =   %{A3:nm-connection-editor:} Disconnected  %{A}
+; label-connected     =   %{A3:nm-connection-editor:} %essid%  %{A}
+; label-disconnected  =   %{A3:nm-connection-editor:} Disconnected  %{A}
+label-connected     =   %{A3:$HOME/Git/config_files/polybar/scripts/networkmanager-dmenu/networkmanager_dmenu:} %essid%  %{A}
+label-disconnected  =   %{A3:$HOME/Git/config_files/polybar/scripts/networkmanager-dmenu/networkmanager_dmenu:} Disconnected  %{A}
 
 [module/date]
 type = internal/date
@@ -173,5 +175,6 @@ type = internal/backlight
 card = radeon_bl0
 
 format  =   <label>
+; https://github.com/jaagr/polybar/wiki/Formatting#action-a
 label   =   %{A4:light -A 5:}%{A5: light -U 5:}%percentage%% %{A}%{A}
 ; vim:ft=dosini
