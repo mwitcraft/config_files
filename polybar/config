@@ -69,9 +69,9 @@ alert		    =	${colors.alert}
 padding-left    = 0
 padding-right   = 2
 
-modules-left    =   icons
-modules-center  =   clock
-modules-right   =   volume battery wifi date
+modules-left    =   icons 
+modules-center  =   clock tray
+modules-right   =   volume backlight battery wifi date 
 
 
 ;	Modules
@@ -144,8 +144,8 @@ type = internal/volume
 
 ;The %{A3:'command':}<text>%{A} makes the text clickable (with right click) and runs 'command'
 ;Taken from: https://github.com/jaagr/polybar/wiki/Formatting#action-a
-format-volume   =  %{A3:pavucontrol:} <label-volume>  %{A}
-format-muted    =  %{A3:pavucontrol:} 0%  %{A}
+format-volume   =  %{A3:pavucontrol:} <label-volume>  %{A}
+format-muted    =  %{A3:pavucontrol:} 0%  %{A}
 
 [module/wifi]
 type = internal/network
@@ -166,4 +166,12 @@ type = internal/date
 
 date    =   %m/%d/%y
 format  =   <date> 
+
+[module/backlight]
+type = internal/backlight
+
+card = radeon_bl0
+
+format  =   <label>
+label   =   %{A4:light -A 5:}%{A5: light -U 5:}%percentage%% %{A}%{A}
 ; vim:ft=dosini
