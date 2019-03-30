@@ -186,7 +186,9 @@ client.unfocused        #4C566A #2F3D44 #1ABC9C #454948  #4C566A
 client.urgent           #ff0000 #FDF6E3 #1ABC9C #268BD2  #ff0000
 
 # Sets wallpaper
-exec --no-startup-id nitrogen --restore
+# exec --no-startup-id nitrogen --restore
+# Sets pscircle wallpaper from script - updates every 10 seconds
+exec_always --no-startup-id /home/mason/Git/config_files/scripts/pscircleimage.sh
 
 # Open apps as floating by default
 for_window [class="kate"]                   floating enable
