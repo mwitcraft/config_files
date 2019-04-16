@@ -196,3 +196,4 @@ for_window [class="x-terminal-emulator"]    floating enable
 for_window [class="mousepad"]               floating enable
 for_window [class="Nm-connection-editor"]   floating enable
 for_window [class="Pavucontrol"]            floating enable
+for_window [class="Simplenote"]             floating enable
