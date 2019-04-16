@@ -1,0 +1,17 @@
+{
+    "window.zoomLevel": -1,
+    "workbench.colorTheme": "Nord",
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "keyboard.dispatch": "keyCode",
+    "files.exclude": {
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.factorypath": true
+    },
+    "workbench.sideBar.location": "left",
+    "window.menuBarVisibility": "toggle",
+    "editor.minimap.enabled": false,
+    "workbench.iconTheme": "material-icon-theme"
+}
