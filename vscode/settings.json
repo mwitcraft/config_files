@@ -11,7 +11,7 @@
         "**/.factorypath": true
     },
     "workbench.sideBar.location": "right",
-    "window.menuBarVisibility": "toggle",
+    "window.menuBarVisibility": "default",
     "editor.minimap.enabled": false,
     "workbench.iconTheme": "material-icon-theme",
     "python.jediEnabled": false
