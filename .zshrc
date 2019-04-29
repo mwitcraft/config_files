@@ -103,6 +103,7 @@ alias ls="ls -al --color=auto"
 # on exit, cwd of terminal will be where ranger exited
 alias goog='ssh mason@35.224.125.161'
 alias vim='nvim'
+alias ra='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 
 export EDITOR='nvim'
 export VISUAL='nvim'
@@ -116,5 +117,5 @@ fd() {
   local dir
   dir=$(find ${1:-.} -path '*/\.*' -prune \
                   -o -type d -print 2> /dev/null | fzf +m) &&
-  cd "$dir" && f
+  cd "$dir"
 }
