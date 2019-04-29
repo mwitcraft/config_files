@@ -10,8 +10,9 @@
         "**/.settings": true,
         "**/.factorypath": true
     },
-    "workbench.sideBar.location": "left",
+    "workbench.sideBar.location": "right",
     "window.menuBarVisibility": "toggle",
     "editor.minimap.enabled": false,
-    "workbench.iconTheme": "material-icon-theme"
+    "workbench.iconTheme": "material-icon-theme",
+    "python.jediEnabled": false
 }

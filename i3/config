@@ -181,7 +181,7 @@ for_window [class=".*"] border pixel 2
 # Theme colors
 # class                 border  backgr. text    indic.   child_border
 client.focused          #9EDCE8 #556064 #80FFF9 #FDF6E3  #9EDCE8
-client.focused_inactive #9EDCE8 #2F3D44 #1ABC9C #454948  #9EDCE8
+client.focused_inactive #9EDCE8 #2F3D44 #1ABC9C #454948  #4C566A
 client.unfocused        #4C566A #2F3D44 #1ABC9C #454948  #4C566A
 client.urgent           #ff0000 #FDF6E3 #1ABC9C #268BD2  #ff0000
 
@@ -196,3 +196,8 @@ for_window [class="x-terminal-emulator"]    floating enable
 for_window [class="mousepad"]               floating enable
 for_window [class="Nm-connection-editor"]   floating enable
 for_window [class="Pavucontrol"]            floating enable
+for_window [class="Simplenote"]             floating enable
+
+bindsym $mod+y fullscreen disable; floating enable; resize set 640 480; sticky enable; move window to position 1270 590
+
+bindsym $mod+Shift+y fullscreen disable; floating disable; sticky disable
