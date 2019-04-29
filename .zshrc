@@ -1,8 +1,5 @@
 # Path to your oh-my-zsh installation.
 # export ZSH="/home/mason/.oh-my-zsh/" #Laptop Install
-export ZSH="/usr/share/oh-my-zsh/" # Desktop Install
-
-source $ZSH/oh-my-zsh.sh
 
 export PATH=$PATH:/home/mason/Git/config_files/scripts
 export EDITOR='nvim'
@@ -28,6 +25,7 @@ HYPHEN_INSENSITIVE="true"
 plugins=(
   git
   extract
+  vi-mode
 )
 
 
@@ -48,3 +46,4 @@ fd() {
                   -o -type d -print 2> /dev/null | fzf +m) &&
   cd "$dir" && f
 }
+source $ZSH/oh-my-zsh.sh
