@@ -25,7 +25,6 @@ HYPHEN_INSENSITIVE="true"
 plugins=(
   git
   extract
-  vi-mode
 )
 
 
