@@ -23,6 +23,11 @@
 
     // Vim Settings
     "vim.leader": "<space>",
+    "vim.cursorStylePerMode.normal": "underline",
+    "vim.cursorStylePerMode.insert": "line",
+    "vim.cursorStylePerMode.visual": "block-outline",
+    "vim.cursorStylePerMode.visualblock": "block-outline",
+    "vim.cursorStylePerMode.visualline": "block-outline",
 
     // Jump to next occurence of 2 chars  (uses s<char><char>)
     "vim.sneak": true,
@@ -87,6 +92,16 @@
         {
             "before" : ["<leader>", "c"],
             "commands" : ["editor.action.commentLine",]
+        },
+
+        // Make indenting repeatable
+        {
+            "before": [">"],
+            "commands": ["editor.action.indentLines"]
+        },
+        {
+            "before": ["<"],
+            "commands": ["editor.action.outdentLines"]
         },
     ]
 }

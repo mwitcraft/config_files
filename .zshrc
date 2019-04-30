@@ -25,13 +25,13 @@ HYPHEN_INSENSITIVE="true"
 plugins=(
   git
   extract
-  vi-mode
 )
 
 
 # ls lists all files, even hidden one
 alias ls="ls -al --color=auto"
 alias vim='nvim'
+alias ra='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 
 # fff with f
 f() {
@@ -44,6 +44,6 @@ fd() {
   local dir
   dir=$(find ${1:-.} -path '*/\.*' -prune \
                   -o -type d -print 2> /dev/null | fzf +m) &&
-  cd "$dir" && f
+  cd "$dir"
 }
 source $ZSH/oh-my-zsh.sh
