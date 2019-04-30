@@ -71,7 +71,7 @@ padding-right   = 2
 
 modules-left    =   icons 
 modules-center  =   clock tray
-modules-right   =   pulse volume backlight wired-network battery wifi date
+modules-right   =   volume backlight wired-network battery wifi date
 
 
 ;	Modules
