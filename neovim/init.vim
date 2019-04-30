@@ -1,6 +1,7 @@
 "Set beginning options
 set nocompatible
 set rtp +=~/.config/nvim/bundle/Vundle.vim
+set rtp +=_/.vim/bundle/Vundle.vim
 let &packpath = &runtimepath
 filetype indent plugin on
 syntax on
@@ -51,9 +52,9 @@ syntax on
     "Linter
         Plugin 'w0rp/ale'
     "Autocomplete 'Engine'
-        Plugin 'Shougo/deoplete.nvim'
+"        Plugin 'Shougo/deoplete.nvim'
     "Compatibility layer for autocomplete engine
-        Plugin 'roxma/vim-hug-neovim-rpc'
+"        Plugin 'roxma/vim-hug-neovim-rpc'
     "Autocomplete for C/C++
         Plugin 'Shougo/deoplete-clangx'
     "Statusbar
@@ -64,8 +65,8 @@ syntax on
         Plugin 'NLKNguyen/papercolor-theme'
     "Nord Theme - Currently Using
         Plugin 'arcticicestudio/nord-vim'
-    "R Plugin
-        Plugin 'jalvesaq/Nvim-R'
+    "Python Autocomplete
+    Plugin 'davidhalter/jedi-vim'
 "Close vundle
     call vundle#end()
 "------------------------------------------------------------------------
