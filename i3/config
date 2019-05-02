@@ -198,9 +198,6 @@ for_window [class="Nm-connection-editor"]   floating enable
 for_window [class="Pavucontrol"]            floating enable
 for_window [class="Simplenote"]             floating enable
 
-# Set floating window sizes per class
-for_window [class="Alacritty"]              resize set 650 400
-
 bindsym $mod+y fullscreen disable; floating enable; resize set 640 480; sticky enable; move window to position 1270 590
 
 bindsym $mod+Shift+y fullscreen disable; floating disable; sticky disable
