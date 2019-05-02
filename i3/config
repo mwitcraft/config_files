@@ -29,7 +29,7 @@ set $ws10 "10"
 #########################################################################
 
 # Open a terminal
-bindsym $mod+Return     exec termite
+bindsym $mod+Return     exec alacritty 
 
 # kill focused window
 bindsym $mod+q          kill
@@ -169,7 +169,7 @@ exec --no-startup-id "i3-msg 'exec dunst'"
 # Startup terminal on boot and move to scratchpad
 for_window[title="bgTerm"] floating enable
 for_window[title="bgTerm"] move scratchpad
-exec_always --no-startup-id termite -t bgTerm
+exec_always --no-startup-id alacritty -t bgTerm
 
 #########################################################################
 #       Theme                                                           #
@@ -197,6 +197,9 @@ for_window [class="mousepad"]               floating enable
 for_window [class="Nm-connection-editor"]   floating enable
 for_window [class="Pavucontrol"]            floating enable
 for_window [class="Simplenote"]             floating enable
+
+# Set floating window sizes per class
+for_window [class="Alacritty"]              resize set 650 400
 
 bindsym $mod+y fullscreen disable; floating enable; resize set 640 480; sticky enable; move window to position 1270 590
 
