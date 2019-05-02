@@ -27,17 +27,8 @@ plugins=(
   extract
 )
 
-
-# ls lists all files, even hidden one
-alias ls="ls -al --color=auto"
 alias vim='nvim'
 alias ra='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
-
-# fff with f
-f() {
-	fff "$@"
-	cd "$(cat "${XDG_CACHE_HOME:=${HOME}/.cache}/fff/.fff_d")"
-}
 
 # fzf to navigate to directory
 fd() {
@@ -47,3 +38,6 @@ fd() {
   cd "$dir"
 }
 source $ZSH/oh-my-zsh.sh
+
+# Needed to move this alias down here to work
+alias ls='ls -al --color=auto'
