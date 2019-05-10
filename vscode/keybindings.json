@@ -23,15 +23,25 @@
 
     {
         "key": "ctrl+t",
-        "command": "workbench.action.terminal.toggleTerminal"
+        "command": "workbench.action.terminal.toggleTerminal",
+        "when": "!terminalFocus"
     },
     {
         "key": "ctrl+`",
         "command": "-workbench.action.terminal.toggleTerminal"
     },
     {
-        "key": "crtl+t",
+        "key": "ctrl+t",
         "command": "workbench.action.focusActiveEditorGroup",
         "when": "terminalFocus"
+    },
+    {
+        "key": "ctrl+shift+t",
+        "command": "workbench.action.terminal.toggleTerminal",
+    },
+    {
+        "key": "ctrl+f",
+        "command": "workbench.action.focusActiveEditorGroup",
+        "when": "sideBarFocus"
     }
 ]

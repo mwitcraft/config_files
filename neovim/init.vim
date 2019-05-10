@@ -7,12 +7,10 @@ filetype indent plugin on
 syntax on
 
 "----------------Custom behavior / Configs ------------------------------
-"Maps jj to 'Esc'
-    inoremap jj <Esc>
 "Shows line numbers
-    set number
+    set relativenumber
 "Show gutter
-    set signcolumn=yes
+"    set signcolumn=yes
 "Set space to leader
     nnoremap <SPACE> <Nop>
     let mapleader=" "
@@ -25,6 +23,9 @@ syntax on
     nnoremap <Left> :bprevious<CR>
     nnoremap <C-l> :bnext<CR>
     nnoremap <C-h> :bprevious<CR>
+
+"No heading in file tree
+let g:netrw_banner = 0
 "------------------------------------------------------------------------
 
 "----------------Indentation Rules---------------------------------------
@@ -44,29 +45,29 @@ syntax on
     call vundle#begin('~/.config/nvim/bundle')
 "Required for vundle
     Plugin 'VundleVim/Vundle.vim'
-"My Plugins
-    "File explorer
-        Plugin 'scrooloose/nerdtree'
-    "Git viewer
-        Plugin 'airblade/vim-gitgutter'
-    "Linter
-        Plugin 'w0rp/ale'
-    "Autocomplete 'Engine'
-"        Plugin 'Shougo/deoplete.nvim'
-    "Compatibility layer for autocomplete engine
-"        Plugin 'roxma/vim-hug-neovim-rpc'
-    "Autocomplete for C/C++
-        Plugin 'Shougo/deoplete-clangx'
-    "Statusbar
-        Plugin 'vim-airline/vim-airline'
-    "Statusbar Themes
-        Plugin 'vim-airline/vim-airline-themes'
-    "More Themes
-        Plugin 'NLKNguyen/papercolor-theme'
-    "Nord Theme - Currently Using
-        Plugin 'arcticicestudio/nord-vim'
-    "Python Autocomplete
-    Plugin 'davidhalter/jedi-vim'
+": "My Plugins
+     "File explorer
+         Plugin 'scrooloose/nerdtree'
+":     "Git viewer
+":         Plugin 'airblade/vim-gitgutter'
+     "Linter
+         Plugin 'w0rp/ale'
+":     "Autocomplete 'Engine'
+": "        Plugin 'Shougo/deoplete.nvim'
+":     "Compatibility layer for autocomplete engine
+": "        Plugin 'roxma/vim-hug-neovim-rpc'
+":     "Autocomplete for C/C++
+":         Plugin 'Shougo/deoplete-clangx'
+":     "Statusbar
+":         Plugin 'vim-airline/vim-airline'
+":     "Statusbar Themes
+":         Plugin 'vim-airline/vim-airline-themes'
+":     "More Themes
+":         Plugin 'NLKNguyen/papercolor-theme'
+     "Nord Theme - Currently Using
+         Plugin 'arcticicestudio/nord-vim'
+":     "Python Autocomplete
+":     Plugin 'davidhalter/jedi-vim'
 "Close vundle
     call vundle#end()
 "------------------------------------------------------------------------

@@ -16,10 +16,11 @@
     "workbench.iconTheme": "material-icon-theme",
     "python.jediEnabled": false,
     "workbench.activityBar.visible": false,
-    "workbench.statusBar.visible": true,
+    "workbench.statusBar.visible": false,
     "breadcrumbs.enabled": false,
     "workbench.editor.showTabs": true,
     "editor.scrollbar.verticalScrollbarSize": 0,
+    "workbench.startupEditor": "newUntitledFile",
 
     // Vim Settings
     "vim.leader": "<space>",
@@ -48,11 +49,11 @@
 
         // Cycle tabs
         {
-            "before" : ["<leader>", "l"],
+            "before" : ["<leader>", "t", "l"],
             "commands": ["workbench.action.nextEditor",]
         },
         {
-            "before" : ["<leader>", "h"],
+            "before" : ["<leader>", "t", "h"],
             "commands": ["workbench.action.previousEditor",]
         },
 
@@ -70,7 +71,7 @@
         // View side bar files with space f
         {
             "before" : ["<leader>", "f"],
-            "commands" : ["workbench.action.toggleSidebarVisibility",]
+            "commands" : ["workbench.action.focusSideBar",]
         },
 
         //  Comment line with space /
@@ -103,5 +104,8 @@
             "before": ["<"],
             "commands": ["editor.action.outdentLines"]
         },
+    ],
+
+    "multiCommand.commands": [
     ]
 }

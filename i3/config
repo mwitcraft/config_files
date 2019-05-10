@@ -193,10 +193,10 @@ exec_always --no-startup-id /home/mason/Git/config_files/scripts/pscircleimage.s
 # Open apps as floating by default
 for_window [class="kate"]                   floating enable
 for_window [class="x-terminal-emulator"]    floating enable
-for_window [class="mousepad"]               floating enable
 for_window [class="Nm-connection-editor"]   floating enable
 for_window [class="Pavucontrol"]            floating enable
 for_window [class="Simplenote"]             floating enable
+for_window [title="New Event: New Event"]   floating enable
 
 bindsym $mod+y fullscreen disable; floating enable; resize set 640 480; sticky enable; move window to position 1270 590
 

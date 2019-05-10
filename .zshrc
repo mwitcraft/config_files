@@ -27,7 +27,7 @@ plugins=(
   extract
 )
 
-alias vim='nvim'
+# alias vim='nvim'
 alias ra='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 
 # fzf to navigate to directory
