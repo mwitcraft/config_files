@@ -167,7 +167,7 @@ label-disconnected  =   %{A3:$HOME/Git/config_files/polybar/scripts/networkmanag
 type = internal/date
 
 date    =   %m/%d/%y
-format  =   <date> 
+format  =   %{A3:thunderbird:} <date>  %{A}
 
 [module/backlight]
 type = internal/backlight
