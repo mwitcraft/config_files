@@ -43,5 +43,10 @@
         "key": "ctrl+f",
         "command": "workbench.action.focusActiveEditorGroup",
         "when": "sideBarFocus"
+    },
+    {
+        "key": "ctrl+f",
+        "command": "workbench.action.focusSideBar",
+        "when": "sideBarFocus"
     }
 ]

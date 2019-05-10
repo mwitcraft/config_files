@@ -80,6 +80,27 @@
             "commands" : ["editor.action.commentLine",]
         },
 
+        // Snippets
+        {
+            "before": ["<leader>", "s", "t"],
+            "commands": [
+                {
+                    "command": "editor.action.insertSnippet",
+                    "args": {"name": "insert_time"}
+                }
+            ],
+        },
+
+        {
+            "before": ["<leader>", "s", "d"],
+            "commands": [
+                {
+                    "command": "editor.action.insertSnippet",
+                    "args": {"name": "insert_date"}
+                }
+            ],
+        },
+
     ], 
 
     "vim.visualModeKeyBindingsNonRecursive": [
