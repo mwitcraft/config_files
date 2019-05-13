@@ -38,7 +38,7 @@ bindsym $mod+q          kill
 bindsym $mod+r          exec rofi drun -show
 
 # Show the first scratchpad window that is not the background terminal
-bindsym $mod+space          [title="^((?!bgTerm).)*$"] scratchpad show
+bindsym $mod+s          [title="^((?!bgTerm).)*$"] scratchpad show
 
 # Move window to scratchpad
 bindsym $mod+Shift+s    move scratchpad
@@ -86,11 +86,6 @@ bindsym $mod+Left   focus left
 bindsym $mod+Down   focus down
 bindsym $mod+Up     focus up
 bindsym $mod+Right  focus right
-# or vim-like with left hand
-bindsym $mod+s	focus left
-bindsym $mod+f	focus down  
-bindsym $mod+d  focus up
-bindsym $mod+g  focus right
 
 
 #########################################################################
@@ -137,9 +132,84 @@ bindsym $mod+Control+Up 	resize grow height 10px or 10ppt
 #########################################################################
 #       Functions                                                       #
 #########################################################################
+
+set $master_mode Workspace Next(l), Workspace Prev(h), Run(r), Kill(k), Terminal(t) | Modes: Window(w), Split(s), System(0), i3(i)
+mode "$master_mode"{
+    # switch to workspace
+    bindsym 1 workspace $ws1, mode "default"
+    bindsym 2 workspace $ws2, mode "default"
+    bindsym 3 workspace $ws3, mode "default"
+    bindsym 4 workspace $ws4, mode "default"
+    bindsym 5 workspace $ws5, mode "default"
+    bindsym 6 workspace $ws6, mode "default"
+    bindsym 7 workspace $ws7, mode "default"
+    bindsym 8 workspace $ws8, mode "default"
+
+    bindsym h           workspace prev, mode "default"
+    bindsym l           workspace next, mode "default"
+    bindsym t           [title="bgTerm"] scratchpad show, mode "default"
+    bindsym k           kill, mode "default"
+    bindsym Return      exec alacritty, mode "default"
+    bindsym r           exec rofi drun -show, mode "default"
+
+    bindsym w           mode "$window_submode"
+    bindsym s           mode "$split_submode"
+    bindsym 0           mode "$system_submode"
+    bindsym i           mode "$i3_submode"
+
+    bindsym Return      mode "default"
+    bindsym Escape      mode "default"
+    bindcode 134        mode "default"
+}
+bindcode 134 mode "$master_mode"
+
+set $window_submode Focus: Left(h), Right(l), Up(k), Down(j), Move(Shift+hjkl), Move to Workspace(1-8), Toggle Floating(space)
+mode "$window_submode"{
+    bindsym h   focus left,     mode "default"
+    bindsym j   focus down,     mode "default"
+    bindsym k   focus up,       mode "default"
+    bindsym l   focus right,    mode "default"
+
+    # Move focused window with arrow keys
+    bindsym Shift+h     move left,  mode "default"
+    bindsym Shift+j     move down,  mode "default"
+    bindsym Shift+k     move up,    mode "default"
+    bindsym Shift+l     move right, mode "default"
+
+    # move focused container to workspace
+    bindsym 1 move container to workspace $ws1, mode "default"
+    bindsym 2 move container to workspace $ws2, mode "default"
+    bindsym 3 move container to workspace $ws3, mode "default"
+    bindsym 4 move container to workspace $ws4, mode "default"
+    bindsym 5 move container to workspace $ws5, mode "default"
+    bindsym 6 move container to workspace $ws6, mode "default"
+    bindsym 7 move container to workspace $ws7, mode "default"
+    bindsym 8 move container to workspace $ws8, mode "default"
+
+    bindsym space       floating toggle 
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+set $split_submode Split: Horizontal(h), Vertical(v)
+mode "$split_submode"{
+    bindsym h split h, mode "default"
+    bindsym v split v, mode "def
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+set $i3_submode Restart(r), Reload Config(c)
+mode "$i3_submode"{
+    bindsym r   restart
+    bindsym c   reload
+}
+
 # Either shutdown, logout, or reboot system
-set $mode_system System (l)ock, l(o)gout, (r)eboot, (s)hutdown
-mode "$mode_system" {
+set $system_submode System (l)ock, l(o)gout, (r)eboot, (s)hutdown
+mode "$system_submode" {
     bindsym l exec --no-startup-id i3lock -i /home/mason/Git/config_files/Background_Laptop\(1366x768\).png, mode "default"
     bindsym o exec --no-startup-id i3-msg exit, mode "default"
     bindsym r exec --no-startup-id systemctl reboot, mode "default"
@@ -149,7 +219,9 @@ mode "$mode_system" {
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
-bindsym $mod+0 mode "$mode_system"
+
+
+
 
 #########################################################################
 #       Startup Applications                                            #

@@ -69,7 +69,7 @@ alert		    =	${colors.alert}
 padding-left    = 0
 padding-right   = 2
 
-modules-left    =   icons 
+modules-left    =   icons mode
 modules-center  =   clock tray
 modules-right   =   volume backlight wired-network battery wifi date
 
@@ -79,6 +79,7 @@ modules-right   =   volume backlight wired-network battery wifi date
 [module/icons]
 type		    =	internal/i3
 format		    =	<label-state><label-mode>
+;format		    =	<label-state>
 enable-click	=	true
 enable-scroll	=	true
 strip-wsnumbers	=	true
@@ -107,6 +108,10 @@ label-unfocused-padding		=	2
 label-urgent			    = 	%icon%
 label-urgent-foreground		=	${colors.alert}
 label-urgent-padding		=	2
+
+label-mode                  = %mode%
+label-mode-background       = #9EDCE8
+label-mode-padding          = 1
 
 [module/clock]
 type	=	internal/date
@@ -167,7 +172,7 @@ label-disconnected  =   %{A3:$HOME/Git/config_files/polybar/scripts/networkmanag
 type = internal/date
 
 date    =   %m/%d/%y
-format  =   %{A3:thunderbird:} <date>  %{A}
+format  =   %{A3::} <date>  %{A}
 
 [module/backlight]
 type = internal/backlight
