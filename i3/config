@@ -118,7 +118,7 @@ bindsym $mod+Shift+v        split v
 bindsym $mod+Shift+space    floating toggle
 
 # enter fullscreen mode for the focused container
-bindsym $mod+Shift+f              fullscreen toggle
+bindsym $mod+Shift+f        fullscreen toggle
 
 # focus the parent container
 bindsym $mod+a              focus parent
@@ -133,102 +133,145 @@ bindsym $mod+Control+Up 	resize grow height 10px or 10ppt
 #       Functions                                                       #
 #########################################################################
 
-set $master_mode Workspace Next(l), Workspace Prev(h), Run(r), Kill(k), Terminal(t) | Modes: Window(w), Split(s), System(0), i3(i)
+# Super key on keyboard
+bindcode 134    mode "$master_mode" 
+# Caps Lock on laptop
+bindcode 66     mode "$master_mode" 
+
+set $master_mode Workspace: Next(l), Prev(h), Move(1-8) | Apps: Run(r), Kill(k), Terminal(t) | Modes: Window(w), Split(s), Scratchpad(p), System(0), i3(i)
 mode "$master_mode"{
-    # switch to workspace
-    bindsym 1 workspace $ws1, mode "default"
-    bindsym 2 workspace $ws2, mode "default"
-    bindsym 3 workspace $ws3, mode "default"
-    bindsym 4 workspace $ws4, mode "default"
-    bindsym 5 workspace $ws5, mode "default"
-    bindsym 6 workspace $ws6, mode "default"
-    bindsym 7 workspace $ws7, mode "default"
-    bindsym 8 workspace $ws8, mode "default"
+    # Workspace Focus
+    bindsym 1 workspace $ws1, mode "default" 
+    bindsym 2 workspace $ws2, mode "default" 
+    bindsym 3 workspace $ws3, mode "default" 
+    bindsym 4 workspace $ws4, mode "default" 
+    bindsym 5 workspace $ws5, mode "default" 
+    bindsym 6 workspace $ws6, mode "default" 
+    bindsym 7 workspace $ws7, mode "default" 
+    bindsym 8 workspace $ws8, mode "default" 
 
-    bindsym h           workspace prev, mode "default"
-    bindsym l           workspace next, mode "default"
-    bindsym t           [title="bgTerm"] scratchpad show, mode "default"
-    bindsym k           kill, mode "default"
-    bindsym Return      exec alacritty, mode "default"
-    bindsym r           exec rofi drun -show, mode "default"
+    # Workspace Focus - Cycle 
+    bindsym h       workspace prev, mode "default" 
+    bindsym l       workspace next, mode "default" 
 
-    bindsym w           mode "$window_submode"
-    bindsym s           mode "$split_submode"
-    bindsym 0           mode "$system_submode"
-    bindsym i           mode "$i3_submode"
+    # Terminal
+    bindsym Return  exec alacritty,                     mode "default" 
+    bindsym t       [title="bgTerm"] scratchpad show,   mode "default" 
 
-    bindsym Return      mode "default"
-    bindsym Escape      mode "default"
-    bindcode 134        mode "default"
+    # Applications
+    bindsym r       exec rofi drun -show,   mode "default" 
+    bindsym f       exec firefox,           mode "default"
+    bindsym k       kill,                   mode "default" 
+
+    # Submodes
+    bindsym w       mode "$window_submode"
+    bindsym s       mode "$split_submode"
+    bindsym p       mode "$scratchpad_submode"
+    bindsym 0       mode "$system_submode"
+    bindsym i       mode "$i3_submode"
+
+    # Exit mode
+    bindsym Escape  mode "default" 
+    bindcode 134    mode "default" 
+    bindcode 66     mode "default" 
 }
-bindcode 134 mode "$master_mode"
 
 set $window_submode Focus: Left(h), Right(l), Up(k), Down(j), Move(Shift+hjkl), Move to Workspace(1-8), Toggle Floating(space)
 mode "$window_submode"{
-    bindsym h   focus left,     mode "default"
-    bindsym j   focus down,     mode "default"
-    bindsym k   focus up,       mode "default"
-    bindsym l   focus right,    mode "default"
+    # Switch focused window
+    bindsym h   focus left,     mode "default" 
+    bindsym j   focus down,     mode "default" 
+    bindsym k   focus up,       mode "default" 
+    bindsym l   focus right,    mode "default" 
 
     # Move focused window with arrow keys
-    bindsym Shift+h     move left,  mode "default"
-    bindsym Shift+j     move down,  mode "default"
-    bindsym Shift+k     move up,    mode "default"
-    bindsym Shift+l     move right, mode "default"
+    bindsym Shift+h     move left,  mode "default" 
+    bindsym Shift+j     move down,  mode "default" 
+    bindsym Shift+k     move up,    mode "default" 
+    bindsym Shift+l     move right, mode "default" 
 
     # move focused container to workspace
-    bindsym 1 move container to workspace $ws1, mode "default"
-    bindsym 2 move container to workspace $ws2, mode "default"
-    bindsym 3 move container to workspace $ws3, mode "default"
-    bindsym 4 move container to workspace $ws4, mode "default"
-    bindsym 5 move container to workspace $ws5, mode "default"
-    bindsym 6 move container to workspace $ws6, mode "default"
-    bindsym 7 move container to workspace $ws7, mode "default"
-    bindsym 8 move container to workspace $ws8, mode "default"
+    bindsym 1 move container to workspace $ws1, mode "default" 
+    bindsym 2 move container to workspace $ws2, mode "default" 
+    bindsym 3 move container to workspace $ws3, mode "default" 
+    bindsym 4 move container to workspace $ws4, mode "default" 
+    bindsym 5 move container to workspace $ws5, mode "default" 
+    bindsym 6 move container to workspace $ws6, mode "default" 
+    bindsym 7 move container to workspace $ws7, mode "default" 
+    bindsym 8 move container to workspace $ws8, mode "default" 
 
-    bindsym space       floating toggle 
+    # Window operations
+    bindsym space       floating toggle,    mode "default" 
+    bindsym f           fullscreen toggle,  mode "default"
 
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
+    # Exit mode
+    bindsym Return  mode "default" 
+    bindsym Escape  mode "default" 
+    bindcode 134    mode "default" 
+    bindcode 66     mode "default" 
 }
 
 set $split_submode Split: Horizontal(h), Vertical(v)
 mode "$split_submode"{
-    bindsym h split h, mode "default"
-    bindsym v split v, mode "def
+    # Set split orientation
+    bindsym h split h, mode "default" 
+    bindsym v split v, mode "default" 
 
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
+    # Exit mode
+    bindsym Return  mode "default" 
+    bindsym Escape  mode "default" 
+    bindcode 134    mode "default" 
+    bindcode 66     mode "default" 
+}
+
+set $scratchpad_submode Scratchpad: Show(t), Move(m)
+mode "$scratchpad_submode"{
+    # Scratchpad operations
+    bindsym s   [title="^((?!bgTerm).)*$"] scratchpad show, mode "default"
+    bindsym m   move scratchpad,                            mode "default"
+
+    # Exit mode
+    bindsym Return  mode "default" 
+    bindsym Escape  mode "default" 
+    bindcode 134    mode "default" 
+    bindcode 66     mode "default" 
 }
 
 set $i3_submode Restart(r), Reload Config(c)
 mode "$i3_submode"{
+    # Restart or reload i3
     bindsym r   restart
-    bindsym c   reload
+    bindsym c   reload, mode "default" 
+
+    # Exit mode
+    bindsym Return  mode "default" 
+    bindsym Escape  mode "default" 
+    bindcode 134    mode "default" 
+    bindcode 66     mode "default" 
 }
 
 # Either shutdown, logout, or reboot system
 set $system_submode System (l)ock, l(o)gout, (r)eboot, (s)hutdown
 mode "$system_submode" {
-    bindsym l exec --no-startup-id i3lock -i /home/mason/Git/config_files/Background_Laptop\(1366x768\).png, mode "default"
-    bindsym o exec --no-startup-id i3-msg exit, mode "default"
-    bindsym r exec --no-startup-id systemctl reboot, mode "default"
-    bindsym s exec --no-startup-id systemctl poweroff, mode "default"
+    # Lock, logout, reboot, or shutdown
+    bindsym l exec --no-startup-id i3lock -i /home/mason/Git/config_files/Background_Laptop\(1366x768\).png, mode "default" 
+    bindsym o exec --no-startup-id i3-msg exit, mode "default" 
+    bindsym r exec --no-startup-id systemctl reboot, mode "default" 
+    bindsym s exec --no-startup-id systemctl poweroff, mode "default" 
 
     # back to normal: Enter or Escape
-    bindsym Return mode "default"
-    bindsym Escape mode "default"
+    bindsym Return  mode "default"
+    bindsym Escape  mode "default"
+    bindcode 134    mode "default"
+    bindcode 66     mode "default"
 }
-
-
-
 
 #########################################################################
 #       Startup Applications                                            #
 #########################################################################
 
-exec_always --no-startup-id exec compton
-exec_always --no-startup-id exec dropbox
+exec --no-startup-id exec compton
+exec --no-startup-id exec dropbox
 
 # Starts polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
@@ -258,9 +301,7 @@ client.unfocused        #4C566A #2F3D44 #1ABC9C #454948  #4C566A
 client.urgent           #ff0000 #FDF6E3 #1ABC9C #268BD2  #ff0000
 
 # Sets wallpaper
-# exec --no-startup-id nitrogen --restore
-# Sets pscircle wallpaper from script - updates every 10 seconds
-exec_always --no-startup-id /home/mason/Git/config_files/scripts/pscircleimage.sh
+exec --no-startup-id nitrogen --restore
 
 # Open apps as floating by default
 for_window [class="kate"]                   floating enable
@@ -268,7 +309,6 @@ for_window [class="x-terminal-emulator"]    floating enable
 for_window [class="Nm-connection-editor"]   floating enable
 for_window [class="Pavucontrol"]            floating enable
 for_window [class="Simplenote"]             floating enable
-for_window [title="New Event: New Event"]   floating enable
 
 bindsym $mod+y fullscreen disable; floating enable; resize set 640 480; sticky enable; move window to position 1270 590
 

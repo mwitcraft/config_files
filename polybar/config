@@ -52,6 +52,7 @@ font-1	=	"Font Awesome 5 Brands:style=Regular:pixelsize=12;1"
 font-2	=	"Font Awesome 5 Free:style=Solid:pixelsize=10;1"
 font-3	=	"Font Awesome 5 Free:style=Regular:pixelsize=10;1"
 font-4	=	"Noto Sans:style:Regular:pixelsize=15;1"
+font-5	=	"Noto Sans:style:Regular:pixelsize=11;1"
 
 ;	Colors
 ;-----------------------------------------
@@ -70,7 +71,7 @@ padding-left    = 0
 padding-right   = 2
 
 modules-left    =   icons mode
-modules-center  =   clock tray
+modules-center  =   clock
 modules-right   =   volume backlight wired-network battery wifi date
 
 
@@ -79,7 +80,6 @@ modules-right   =   volume backlight wired-network battery wifi date
 [module/icons]
 type		    =	internal/i3
 format		    =	<label-state><label-mode>
-;format		    =	<label-state>
 enable-click	=	true
 enable-scroll	=	true
 strip-wsnumbers	=	true
