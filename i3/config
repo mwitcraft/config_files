@@ -270,21 +270,16 @@ mode "$system_submode" {
 #       Startup Applications                                            #
 #########################################################################
 
-exec --no-startup-id exec compton
-exec --no-startup-id exec dropbox
+exec --no-startup-id compton
+exec --no-startup-id dropbox
 
 # Starts polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
-# Start dunst on boot
-# kill default notification daemon
-exec --no-startup-id "i3-msg 'exec killall dde-osd'"
-exec --no-startup-id "i3-msg 'exec dunst'"
-
 # Startup terminal on boot and move to scratchpad
 for_window[title="bgTerm"] floating enable
 for_window[title="bgTerm"] move scratchpad
-exec_always --no-startup-id alacritty -t bgTerm
+exec_always alacritty -t bgTerm
 
 #########################################################################
 #       Theme                                                           #
@@ -300,8 +295,8 @@ client.focused_inactive #9EDCE8 #2F3D44 #1ABC9C #454948  #4C566A
 client.unfocused        #4C566A #2F3D44 #1ABC9C #454948  #4C566A
 client.urgent           #ff0000 #FDF6E3 #1ABC9C #268BD2  #ff0000
 
-# Sets wallpaper
-exec --no-startup-id nitrogen --restore
+# Set background color
+exec_always --no-startup-id hsetroot -solid "#454C5C"
 
 # Open apps as floating by default
 for_window [class="kate"]                   floating enable
@@ -310,6 +305,7 @@ for_window [class="Nm-connection-editor"]   floating enable
 for_window [class="Pavucontrol"]            floating enable
 for_window [class="Simplenote"]             floating enable
 
-bindsym $mod+y fullscreen disable; floating enable; resize set 640 480; sticky enable; move window to position 1270 590
-
-bindsym $mod+Shift+y fullscreen disable; floating disable; sticky disable
+# Gaps
+gaps inner 7
+gaps outer -2
+smart_gaps on

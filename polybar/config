@@ -149,8 +149,8 @@ type = internal/volume
 
 ;The %{A3:'command':}<text>%{A} makes the text clickable (with right click) and runs 'command'
 ;Taken from: https://github.com/jaagr/polybar/wiki/Formatting#action-a
-format-volume   =  %{A3:pavucontrol:} <label-volume>  %{A}
-format-muted    =  %{A3:pavucontrol:} M  %{A}
+format-volume   =  %{A3:i3-msg "exec pavucontrol":} <label-volume>  %{A}
+format-muted    =  %{A3:i3-msg "exec pavucontrol":} M  %{A}
 
 [module/wifi]
 type = internal/network
@@ -177,7 +177,7 @@ format  =   %{A3::} <date>  %{A}
 [module/backlight]
 type = internal/backlight
 
-card = radeon_bl0
+card = intel_backlight
 
 format  =   <label>
 ; https://github.com/jaagr/polybar/wiki/Formatting#action-a
