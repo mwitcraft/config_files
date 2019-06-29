@@ -8,8 +8,8 @@
 [colors]
 background	    =	 #2e3440
 foreground	    =	 #575f72
-foreground-alt  =	 #0008ff
-background-alt	=	 #00ff00
+foreground-alt      =	 #0008ff
+background-alt	    =	 #00ff00
 highlight	    =	 #ffee00
 primary		    =	 #d000ff
 secondary 	    =	 #777777
@@ -22,8 +22,8 @@ white		    =	 #ffffff
 
 [bar/main]
 
-line-size		    = 	1
-border-size		    = 	0
+line-size		= 	1
+border-size		= 	0
 border-color		= 	#00000000
 module-margin-left	= 	2
 module-margin-right	=	2
@@ -56,14 +56,14 @@ font-5	=	"Noto Sans:style:Regular:pixelsize=11;1"
 
 ;	Colors
 ;-----------------------------------------
-background	    =	${colors.background}
-background-alt	=	${colors.background-alt}
-foreground	    =	${colors.foreground}
-foreground-alt	=	${colors.foreground-alt}
-highlight	    =	${colors.highlight}
-primary		    =	${colors.primary}
-secondary	    =	${colors.secondary}
-alert		    =	${colors.alert}
+background	    	=	${colors.background}
+background-alt		=	${colors.background-alt}
+foreground	    	=	${colors.foreground}
+foreground-alt		=	${colors.foreground-alt}
+highlight	    	=	${colors.highlight}
+primary		    	=	${colors.primary}
+secondary	    	=	${colors.secondary}
+alert		    	=	${colors.alert}
 
 ;	Bar
 ;----------------------------------------
@@ -72,14 +72,13 @@ padding-right   = 2
 
 modules-left    =   icons mode
 modules-center  =   clock
-modules-right   =   volume backlight wired-network battery wifi date
-
+modules-right   =   volume backlight battery wired-network wifi date
 
 ;	Modules
 ;-----------------------------------------
 [module/icons]
-type		    =	internal/i3
-format		    =	<label-state><label-mode>
+type		=	internal/i3
+format		=	<label-state><label-mode>
 enable-click	=	true
 enable-scroll	=	true
 strip-wsnumbers	=	true
@@ -95,17 +94,17 @@ ws-icon-6	    =	7;7.
 ws-icon-7	    =	8;8.
 
 ;Sets icon appearance based on state
-label-focused			    =	%icon%
+label-focused			=	%icon%
 label-focused-foreground	=	${colors.white}
 label-focused-background	=	${colors.background}
 label-focused-padding		=	2
 
-label-unfocused			    =	%icon%
+label-unfocused			=	%icon%
 label-unfocused-foreground	=	${colors.foreground}
 label-unfocused-background	=	${colors.background}
 label-unfocused-padding		=	2
 
-label-urgent			    = 	%icon%
+label-urgent			= 	%icon%
 label-urgent-foreground		=	${colors.alert}
 label-urgent-padding		=	2
 
@@ -121,8 +120,8 @@ time	=	%I:%M
 label	=	%time%
 
 ;%{T5}<text>%{T-} makes text use the 5th font from above
-format			    =   %{T5}<label>%{T-}
-format-foreground   =   ${colors.white}
+format			=   %{T5}<label>%{T-}
+format-foreground   	=   ${colors.white}
 
 [module/battery]
 type = internal/battery
@@ -137,15 +136,15 @@ poll-interval 	=   5
 
 format-charging		=	<label-charging>% 
 format-discharging	=	<label-discharging>% 
-format-full         =   <label-full>% 
+format-full         	=   <label-full>% 
 
 label-charging		=	%percentage%
 label-discharging	=	%percentage%
-label-full          =   %percentage%
+label-full          	=   %percentage%
 
 
 [module/volume]
-type = internal/volume
+type = internal/pulseaudio
 
 ;The %{A3:'command':}<text>%{A} makes the text clickable (with right click) and runs 'command'
 ;Taken from: https://github.com/jaagr/polybar/wiki/Formatting#action-a
@@ -155,7 +154,7 @@ format-muted    =  %{A3:i3-msg "exec pavucontrol":} M  %{A}
 [module/wifi]
 type = internal/network
 
-interface   = wlo1
+interface   = wlp2s0
 interval    = 5
 
 format-connected    =   <label-connected>
@@ -165,8 +164,8 @@ format-disconnected =   <label-disconnected>
 ;Taken from: https://github.com/jaagr/polybar/wiki/Formatting#action-a
 ; label-connected     =   %{A3:nm-connection-editor:} %essid%  %{A}
 ; label-disconnected  =   %{A3:nm-connection-editor:} Disconnected  %{A}
-label-connected     =   %{A3:$HOME/Git/config_files/polybar/scripts/networkmanager-dmenu/networkmanager_dmenu:} %essid%  %{A}
-label-disconnected  =   %{A3:$HOME/Git/config_files/polybar/scripts/networkmanager-dmenu/networkmanager_dmenu:} Disconnected  %{A}
+label-connected     =   %{A3:i3-msg exec "alacritty -t nmtui -e nmtui":} %essid%  %{A}
+label-disconnected  =   %{A3:i3-msg exec "alacritty -t nmtui -e nmtui":} Disconnected  %{A}
 
 [module/date]
 type = internal/date
@@ -183,18 +182,9 @@ format  =   <label>
 ; https://github.com/jaagr/polybar/wiki/Formatting#action-a
 label   =   %{A4:light -A 5:}%{A5: light -U 5:}%percentage%% %{A}%{A}
 
-[module/pulse]
-type = internal/pulseaudio
-
-;Max volume = 100% if false, else ~153%
-use-ui-max = false
-
-format-volume   =  %{A3:pavucontrol:} <label-volume>  %{A}
-format-muted    =  %{A3:pavucontrol:} M  %{A}
-
 [module/wired-network]
 type = internal/network
-interface = enp30s0
+interface = eno1
 
 label-connected = %ifname% 
 ; vim:ft=dosini
