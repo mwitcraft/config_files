@@ -74,6 +74,9 @@ modules-left    =   icons mode
 modules-center  =   clock
 modules-right   =   volume backlight battery wired-network wifi date
 
+; Activate if need access to any tray items (ie nm-applet)
+;tray-position = right
+
 ;	Modules
 ;-----------------------------------------
 [module/icons]

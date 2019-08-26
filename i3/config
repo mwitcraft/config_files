@@ -254,7 +254,7 @@ mode "$i3_submode"{
 set $system_submode System (l)ock, l(o)gout, (r)eboot, (s)hutdown
 mode "$system_submode" {
     # Lock, logout, reboot, or shutdown
-    bindsym l exec --no-startup-id i3lock -i /home/mason/Git/config_files/Background_Laptop\(1366x768\).png, mode "default" 
+    bindsym l exec --no-startup-id i3lock --color=2e3440, mode "default" 
     bindsym o exec --no-startup-id i3-msg exit, mode "default" 
     bindsym r exec --no-startup-id systemctl reboot, mode "default" 
     bindsym s exec --no-startup-id systemctl poweroff, mode "default" 
