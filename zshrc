@@ -56,6 +56,4 @@ source $ZSH/oh-my-zsh.sh
 ################################################
 alias ra='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 alias ls='ls -al --color=auto'
-
-alias display='python /home/mason/Git/config_files/scripts/display.py'
-alias time='sudo ntpdate time.apple.com'
+alias ms='mousepad'
