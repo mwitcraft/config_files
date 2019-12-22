@@ -160,21 +160,19 @@ mode "$mode_system" {
 
 exec --no-startup-id compton
 exec --no-startup-id dropbox
-exec_always --no-startup-id nm-applet
-exec --no-startup-id volume-icon
-exec --no-startup-id pamac-tray
+exec --no-startup-id nm-applet
 
 # Starts polybar
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Startup terminal on boot and move to scratchpad
 for_window[title="bgTerm"] floating enable
 for_window[title="bgTerm"] move scratchpad
-exec_always alacritty -t bgTerm
+exec_always --no-startup-id alacritty -t bgTerm
 
 # Set keybinds
-exec_always xbindkeys --poll-rc
-exec_always xmodmap ~/.Xmodmap 
+exec xbindkeys --poll-rc
+exec xmodmap ~/.Xmodmap 
 
 #########################################################################
 #       Theme                                                           #

@@ -72,7 +72,7 @@ padding-right   = 2
 
 modules-left    =   icons mode
 modules-center  =   clock
-modules-right   =   volume backlight battery wired-network wifi date
+modules-right   =   toggle-i3bar volume backlight battery wired-network wifi date
 
 ; Activate if need access to any tray items (ie nm-applet)
 ;tray-position = right
@@ -183,11 +183,17 @@ card = intel_backlight
 
 format  =   <label>
 ; https://github.com/jaagr/polybar/wiki/Formatting#action-a
-label   =   %{A4:light -A 5:}%{A5: light -U 5:}%percentage%% %{A}%{A}
+label   =   %{A4: xbacklight + 5:}%{A5: xbacklight - 5:}%percentage%% %{A}%{A}
 
 [module/wired-network]
 type = internal/network
 interface = eno1
 
 label-connected = %ifname% 
+
+; used to show and hide tray
+[module/toggle-i3bar]
+type = custom/text
+content = %{A1:i3-msg "bar mode dock":}%{A3:i3-msg "bar mode invisible":} %{A}%{A}
+
 ; vim:ft=dosini
