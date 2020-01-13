@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH="/home/mason/.oh-my-zsh/"
+export ZSH="/home/mwitcraft/.oh-my-zsh/"
 
 # Add scripts 
 export PATH=$PATH:/home/mason/Git/config_files/scripts
@@ -24,7 +24,6 @@ COMPLETION_WAITING_DOTS="true"
 plugins=(
   git
   extract
-  vi-mode
 )
 
 
@@ -57,3 +56,5 @@ source $ZSH/oh-my-zsh.sh
 alias ra='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 alias ls='ls -al --color=auto'
 alias ms='mousepad'
+
+alias run-poly='/home/mwitcraft/.config/polybar/launch.sh'
