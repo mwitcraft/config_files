@@ -172,8 +172,7 @@ for_window[title="bgTerm"] move scratchpad
 exec_always --no-startup-id alacritty -t bgTerm
 
 # Set keybinds
-exec xbindkeys --poll-rc
-exec xmodmap ~/.Xmodmap 
+exec_always setxkbmap -option caps:super
 
 #########################################################################
 #       Theme                                                           #

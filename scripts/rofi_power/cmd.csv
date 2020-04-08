@@ -1,0 +1,4 @@
+Shutdown,shutdown now
+Reboot,reboot
+Logout,i3-msg "exit"
+Lock,i3lock -c 2e3440
