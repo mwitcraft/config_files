@@ -1,111 +1,147 @@
 {
-    "window.zoomLevel": -1,
-    "workbench.colorTheme": "Polar",
-    "editor.suggestSelection": "first",
-    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-    "keyboard.dispatch": "keyCode",
-    "files.exclude": {
-        "**/.classpath": true,
-        "**/.project": true,
-        "**/.settings": true,
-        "**/.factorypath": true
-    },
     "workbench.sideBar.location": "right",
-    "window.menuBarVisibility": "toggle",
-    "editor.minimap.enabled": true,
-    "workbench.iconTheme": "material-icon-theme",
-    "python.jediEnabled": false,
-    "workbench.activityBar.visible": false,
-    "workbench.statusBar.visible": false,
-    "breadcrumbs.enabled": false,
-    "workbench.editor.showTabs": true,
-    "editor.scrollbar.verticalScrollbarSize": 0,
+    "workbench.colorTheme": "Spacegray Ocean Dark",
+    "editor.minimap.enabled": false,
+    "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
     "workbench.startupEditor": "newUntitledFile",
-
-    // Vim Settings
-    "vim.leader": "<space>",
-    "vim.cursorStylePerMode.normal": "underline",
-    "vim.cursorStylePerMode.insert": "line",
-    "vim.cursorStylePerMode.visual": "block-outline",
-    "vim.cursorStylePerMode.visualblock": "block-outline",
-    "vim.cursorStylePerMode.visualline": "block-outline",
-
-    // Jump to next occurence of 2 chars  (uses s<char><char>)
-    "vim.sneak": true,
-
-    // Don't use ctrl keys in vim
-    "vim.useCtrlKeys": false,
-    
-    "vim.insertModeKeyBindings": [
-
-    ],
-
+    "window.zoomLevel": 0,
+    "vim.easymotion": true,
+    "vim.leader": " ",
     "vim.normalModeKeyBindingsNonRecursive": [
-        // Show command palette with space-space 
+        // EasyMotion
         {
-            "before" : ["<leader>", "<leader>"],
-            "commands": ["workbench.action.showCommands",]
-        },
-
-        // Cycle tabs
-        {
-            "before" : ["<leader>", "t", "l"],
-            "commands": ["workbench.action.nextEditor",]
+            "before": ["f"],
+            "after": ["leader", "leader", "f"]
         },
         {
-            "before" : ["<leader>", "t", "h"],
-            "commands": ["workbench.action.previousEditor",]
-        },
-
-        // Focus left/right editor
-        {
-            "before" : ["<leader>", "w", "l"],
-            "commands": ["workbench.action.focusRightGroup",]
+            "before": ["F"],
+            "after": ["leader", "leader", "F"]
         },
         {
-            "before" : ["<leader>", "w", "h"],
-            "commands": ["workbench.action.focusLeftGroup",]
-        },
-
-
-        // View side bar files with space f
-        {
-            "before" : ["<leader>", "f"],
-            "commands" : ["workbench.action.focusSideBar",]
-        },
-
-        //  Comment line with space /
-        {
-            "before" : ["<leader>", "c"],
-            "commands" : ["editor.action.commentLine",]
-        },
-
-    ], 
-
-    "vim.visualModeKeyBindingsNonRecursive": [
-        // Send to ipython with space r
-        {
-            "before" : ["<leader>", "r"],
-            "commands" : ["ipython.sendSelectedToIPython",]
-        },
-
-        // Comment Visual Block lines
-        {
-            "before" : ["<leader>", "c"],
-            "commands" : ["editor.action.commentLine",]
-        },
-
-        // Make indenting repeatable
-        {
-            "before": [">"],
-            "commands": ["editor.action.indentLines"]
+            "before": ["leader", "j"],
+            "after": ["leader", "leader", "j"]
         },
         {
-            "before": ["<"],
-            "commands": ["editor.action.outdentLines"]
+            "before": ["leader", "k"],
+            "after": ["leader", "leader", "k"]
         },
+        // EasyMotion
+        // VIM remaps
+        {
+            "before": ["leader", "z"],
+            "after": ["z", "z"]
+        },
+        // Scroll down
+        {
+            "before": ["J"],
+            "after": ["<C-e>"]
+        },
+        // Scroll up 
+        {
+            "before": ["K"],
+            "after": ["<C-y>"]
+        },
+        // VSCode commands
+        {
+            "before": ["leader", "d"],
+            "commands": ["editor.action.revealDefinition"]
+        },
+        {
+            "before": ["leader", "/"],
+            "commands": ["editor.action.commentLine"]
+        },
+        {
+            "before": ["leader", "."],
+            "commands": ["editor.action.quickFix"]
+        },
+        {
+            "before": ["leader", "t"],
+            "commands": ["workbench.action.quickOpen"]
+        },
+        {
+            "before": ["leader", "enter"],
+            "commands": ["workbench.action.showCommands"]
+        },
+        {
+            "before": ["leader", "r"],
+            "commands": ["workbench.action.debug.selectandstart"]
+        },
+        {
+            "before": ["leader", "b"],
+            "commands": ["workbench.action.navigateBack"]
+        },
+        {
+            "before": ["leader", "m"],
+            "commands": ["workbench.action.toggleSidebarVisibility"]
+        },
+        // VSCode commands
+        // Windows
+        {
+            "before": ["leader", "w", "l"],
+            "commands": ["workbench.action.focusRightGroup"]
+        },
+        {
+            "before": ["leader", "w", "h"],
+            "commands": ["workbench.action.focusLeftGroup"]
+        },
+        // Windows
     ],
-
-    "multiCommand.commands": [
-    ]
+    "vim.visualModeKeyBindingsNonRecursive": [
+        // EasyMotion
+        {
+            "before": ["f"],
+            "after": ["leader", "leader", "f"]
+        },
+        {
+            "before": ["F"],
+            "after": ["leader", "leader", "F"]
+        },
+        {
+            "before": ["w"],
+            "after": ["leader", "leader", "w"]
+        },
+        {
+            "before": ["b"],
+            "after": ["leader", "leader", "b"]
+        },
+        {
+            "before": ["leader", "j"],
+            "after": ["leader", "leader", "j"]
+        },
+        {
+            "before": ["leader", "k"],
+            "after": ["leader", "leader", "k"]
+        },
+        // EasyMotion
+        {
+            "before": ["leader", "/"],
+            "commands": ["editor.action.commentLine"]
+        },
+        {
+            "before": ["leader", "f"],
+            "commands": ["workbench.action.findInFiles"]
+        }
+    ],
+    "workbench.statusBar.visible": true,
+    "window.menuBarVisibility": "toggle",
+    "workbench.iconTheme": "file-icons",
+    "editor.fontFamily": "FiraCode NF",
+    "explorer.confirmDelete": false,
+    "[html]": {
+        "editor.defaultFormatter": "vscode.html-language-features"
+    },
+    "explorer.confirmDragAndDrop": false,
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "files.associations": {
+        "*.json": "jsonc"
+    },
+    "editor.fontSize": 12,
+    "typescript.suggest.paths": false,
+    "[jsonc]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "editor.formatOnType": true,
+    "debug.console.wordWrap": false
 }

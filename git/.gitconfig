@@ -1,0 +1,17 @@
+# This is Git's per-user configuration file.
+[user]
+# Please adapt and uncomment the following lines:
+	name = Mason Witcraft
+	email = Mason.Witcraft@kochind.com
+[alias]
+# Commit
+	ci = commit
+	cim = commit -m
+	cia = commit --amend --no-edit
+	ciwip = commit -m "wip"
+# Other
+	lg = log --pretty=oneline --abbrev-commit
+	st = status -s
+	co = checkout
+	pm = pull origin master
+	
