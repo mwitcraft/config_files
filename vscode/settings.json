@@ -1,131 +1,260 @@
 {
     "workbench.sideBar.location": "right",
-    "workbench.colorTheme": "Spacegray Ocean Dark",
     "editor.minimap.enabled": false,
-    "terminal.integrated.shell.windows": "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
     "workbench.startupEditor": "newUntitledFile",
-    "window.zoomLevel": 0,
-    "vim.easymotion": true,
     "vim.leader": " ",
     "vim.normalModeKeyBindingsNonRecursive": [
-        // EasyMotion
-        {
-            "before": ["f"],
-            "after": ["leader", "leader", "f"]
-        },
-        {
-            "before": ["F"],
-            "after": ["leader", "leader", "F"]
-        },
-        {
-            "before": ["leader", "j"],
-            "after": ["leader", "leader", "j"]
-        },
-        {
-            "before": ["leader", "k"],
-            "after": ["leader", "leader", "k"]
-        },
-        // EasyMotion
         // VIM remaps
         {
-            "before": ["leader", "z"],
-            "after": ["z", "z"]
+            "before": [
+                "leader",
+                "z"
+            ],
+            "after": [
+                "z",
+                "z"
+            ]
         },
         // Scroll down
         {
-            "before": ["J"],
-            "after": ["<C-e>"]
+            "before": [
+                "J"
+            ],
+            "after": [
+                "<C-e>"
+            ]
+        },
+        // Scroll down
+        {
+            "before": [
+                "<C-j>"
+            ],
+            "after": [
+                "<C-e>"
+            ]
         },
         // Scroll up 
         {
-            "before": ["K"],
-            "after": ["<C-y>"]
+            "before": [
+                "K"
+            ],
+            "after": [
+                "<C-y>"
+            ]
+        },
+        // Scroll up 
+        {
+            "before": [
+                "<C-k>"
+            ],
+            "after": [
+                "<C-y>"
+            ]
+        },
+        {
+            "before": [
+                "leader",
+                "f"
+            ],
+            "after": [
+                "/"
+            ]
         },
         // VSCode commands
         {
-            "before": ["leader", "d"],
-            "commands": ["editor.action.revealDefinition"]
+            "before": [
+                "leader",
+                "d"
+            ],
+            "commands": [
+                "editor.action.revealDefinition"
+            ]
         },
         {
-            "before": ["leader", "/"],
-            "commands": ["editor.action.commentLine"]
+            "before": [
+                "leader",
+                "/"
+            ],
+            "commands": [
+                "editor.action.commentLine"
+            ]
         },
         {
-            "before": ["leader", "."],
-            "commands": ["editor.action.quickFix"]
+            "before": [
+                "leader",
+                "."
+            ],
+            "commands": [
+                "editor.action.quickFix"
+            ]
         },
         {
-            "before": ["leader", "t"],
-            "commands": ["workbench.action.quickOpen"]
+            "before": [
+                "leader",
+                "o"
+            ],
+            "commands": [
+                "workbench.action.quickOpen"
+            ]
         },
         {
-            "before": ["leader", "enter"],
-            "commands": ["workbench.action.showCommands"]
+            "before": [
+                "leader",
+                "enter"
+            ],
+            "commands": [
+                "workbench.action.showCommands"
+            ]
         },
         {
-            "before": ["leader", "r"],
-            "commands": ["workbench.action.debug.selectandstart"]
+            "before": [
+                "leader",
+                "b"
+            ],
+            "commands": [
+                "workbench.action.navigateBack"
+            ]
         },
         {
-            "before": ["leader", "b"],
-            "commands": ["workbench.action.navigateBack"]
+            "before": [
+                "leader",
+                "m"
+            ],
+            "commands": [
+                "workbench.action.toggleSidebarVisibility"
+            ]
         },
         {
-            "before": ["leader", "m"],
-            "commands": ["workbench.action.toggleSidebarVisibility"]
+            "before": [
+                "leader",
+                "leader",
+                "f"
+            ],
+            "commands": [
+                "editor.action.formatDocument"
+            ]
         },
+        {
+            "before": [
+                "leader",
+                "r"
+            ],
+            "commands": [
+                "editor.action.rename"
+            ]
+        },
+        {
+            "before": [
+                "leader",
+                "t",
+                "l"
+            ],
+            "commands": [
+                "workbench.action.nextEditor"
+            ]
+        },
+        {
+            "before": [
+                "leader",
+                "t",
+                "h"
+            ],
+            "commands": [
+                "workbench.action.previousEditor"
+            ]
+        },
+        {
+            "before": [
+                "leader",
+                "leader",
+                "r"
+            ],
+            "commands": [
+                "workbench.action.debug.start"
+            ]
+        }
         // VSCode commands
         // Windows
         {
-            "before": ["leader", "w", "l"],
-            "commands": ["workbench.action.focusRightGroup"]
+            "before": [
+                "leader",
+                "l"
+            ],
+            "commands": [
+                "workbench.action.focusRightGroup"
+            ]
         },
         {
-            "before": ["leader", "w", "h"],
-            "commands": ["workbench.action.focusLeftGroup"]
+            "before": [
+                "leader",
+                "h"
+            ],
+            "commands": [
+                "workbench.action.focusLeftGroup"
+            ]
         },
+        {
+            "before": [
+                "leader",
+                "j"
+            ],
+            "commands": [
+                "workbench.action.focusSecondEditorGroup"
+            ]
+        },
+        {
+            "before": [
+                "leader",
+                "k"
+            ],
+            "commands": [
+                "workbench.action.focusFirstEditorGroup"
+            ]
+        }
         // Windows
     ],
     "vim.visualModeKeyBindingsNonRecursive": [
-        // EasyMotion
         {
-            "before": ["f"],
-            "after": ["leader", "leader", "f"]
+            "before": [
+                "leader",
+                "/"
+            ],
+            "commands": [
+                "editor.action.commentLine"
+            ]
         },
+        // Center screen
         {
-            "before": ["F"],
-            "after": ["leader", "leader", "F"]
+            "before": [
+                "leader",
+                "z"
+            ],
+            "after": [
+                "z",
+                "z"
+            ]
         },
+        // Scroll down
         {
-            "before": ["w"],
-            "after": ["leader", "leader", "w"]
+            "before": [
+                "J"
+            ],
+            "after": [
+                "<C-e>"
+            ]
         },
+        // Scroll up 
         {
-            "before": ["b"],
-            "after": ["leader", "leader", "b"]
+            "before": [
+                "K"
+            ],
+            "after": [
+                "<C-y>"
+            ]
         },
-        {
-            "before": ["leader", "j"],
-            "after": ["leader", "leader", "j"]
-        },
-        {
-            "before": ["leader", "k"],
-            "after": ["leader", "leader", "k"]
-        },
-        // EasyMotion
-        {
-            "before": ["leader", "/"],
-            "commands": ["editor.action.commentLine"]
-        },
-        {
-            "before": ["leader", "f"],
-            "commands": ["workbench.action.findInFiles"]
-        }
     ],
-    "workbench.statusBar.visible": true,
-    "window.menuBarVisibility": "toggle",
-    "workbench.iconTheme": "file-icons",
-    "editor.fontFamily": "FiraCode NF",
+    "editor.fontFamily": "Fira Code", // https://github.com/tonsky/FiraCode
+    "editor.fontLigatures": true,
     "explorer.confirmDelete": false,
     "[html]": {
         "editor.defaultFormatter": "vscode.html-language-features"
@@ -137,11 +266,95 @@
     "files.associations": {
         "*.json": "jsonc"
     },
-    "editor.fontSize": 12,
-    "typescript.suggest.paths": false,
+    "editor.fontSize": 13,
+    "typescript.suggest.paths": true,
     "[jsonc]": {
         "editor.defaultFormatter": "vscode.json-language-features"
     },
     "editor.formatOnType": true,
-    "debug.console.wordWrap": false
+    "debug.console.wordWrap": false,
+    "terminal.external.windowsExec": "C:\\Users\\WITCRAFM\\AppData\\Local\\Microsoft\\WindowsApps\\wt.exe",
+    "[javascript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true,
+    "editor.detectIndentation": false,
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "workbench.colorTheme": "Nord",
+    "workbench.editor.untitled.hint": "hidden",
+    // "editor.renderWhitespace": "all",
+    "editor.autoClosingDelete": "never",
+    "editor.matchBrackets": "never",
+    "terminal.integrated.fontFamily": "Fira Code",
+    "editor.fontWeight": "400",
+    "bracket-pair-colorizer-2.depreciation-notice": false,
+    "terminal.integrated.defaultProfile.windows": "Git Bash",
+    "redhat.telemetry.enabled": false,
+    "yaml.customTags": [
+        "!And",
+        "!If",
+        "!Not",
+        "!Equals",
+        "!Or",
+        "!FindInMap sequence",
+        "!Base64",
+        "!Cidr",
+        "!Ref",
+        "!Sub",
+        "!GetAtt",
+        "!GetAZs",
+        "!ImportValue",
+        "!Select",
+        "!Select sequence",
+        "!Split",
+        "!Join sequence",
+        "!And sequence",
+        "!If sequence",
+        "!Not sequence",
+        "!Equals sequence",
+        "!Or sequence",
+        "!FindInMap",
+        "!Join",
+        "!Sub sequence",
+        "!ImportValue sequence",
+        "!Split sequence"
+    ],
+    // Enable/disable default YAML formatter (requires restart)
+    "yaml.format.enable": true,
+    "editor.unicodeHighlight.invisibleCharacters": false,
+    // "editor.bracketPairColorization.enabled": true,
+    "editor.guides.bracketPairs": "active",
+    // "workbench.colorCustomizations": {
+    //     "editorBracketHighlight.foreground1": "#81A1C1",
+    //     "editorBracketHighlight.foreground2": "#EBCB8B",
+    //     "editorBracketHighlight.foreground3": "#B48EAD",
+    //     "editorBracketHighlight.foreground4": "#5E81AC",
+    //     "editorBracketHighlight.foreground5": "#A3BE8C",
+    //     "editorBracketHighlight.foreground6": "#D08770",
+    //     "editorBracketHighlight.unexpectedBracket.foreground": "#ff0008"
+    // },
+    "explorer.copyRelativePathSeparator": "/",
+    "http.proxySupport": "off",
+    "zenMode.fullScreen": false,
+    "zenMode.centerLayout": false,
+    "zenMode.hideTabs": false,
+    "zenMode.hideLineNumbers": false,
+    "editor.lineNumbers": "relative",
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.python",
+        "editor.rulers": [
+            88
+        ],
+        "editor.formatOnType": true
+    },
+    "terminal.external.linuxExec": "\\mnt\\c\\Users\\WITCRAFM\\AppData\\Local\\Microsoft\\WindowsApps\\wt.exe",
+    "vim.useCtrlKeys": false,
+    "python.formatting.provider": "black",
 }

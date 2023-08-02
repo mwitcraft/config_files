@@ -1,8 +1,7 @@
-# This is Git's per-user configuration file.
 [user]
 # Please adapt and uncomment the following lines:
-	name = Mason Witcraft
-	email = Mason.Witcraft@kochind.com
+	name = mwitcraft
+	email = mason.witcraft@kochind.com
 [alias]
 # Commit
 	ci = commit
@@ -14,4 +13,3 @@
 	st = status -s
 	co = checkout
 	pm = pull origin master
-	
