@@ -172,7 +172,7 @@
             "commands": [
                 "workbench.action.debug.start"
             ]
-        }
+        },
         // VSCode commands
         // Windows
         {
@@ -253,11 +253,12 @@
             ]
         },
     ],
-    "editor.fontFamily": "Fira Code", // https://github.com/tonsky/FiraCode
+    // "editor.fontFamily": "Red Hat Mono Medium", // https://fonts.google.com/specimen/Red+Hat+Mono
+    "editor.fontFamily": "Fira Code",
     "editor.fontLigatures": true,
     "explorer.confirmDelete": false,
     "[html]": {
-        "editor.defaultFormatter": "vscode.html-language-features"
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "explorer.confirmDragAndDrop": false,
     "[json]": {
@@ -266,7 +267,7 @@
     "files.associations": {
         "*.json": "jsonc"
     },
-    "editor.fontSize": 13,
+    "editor.fontSize": 14,
     "typescript.suggest.paths": true,
     "[jsonc]": {
         "editor.defaultFormatter": "vscode.json-language-features"
@@ -278,7 +279,7 @@
         "editor.defaultFormatter": "vscode.typescript-language-features"
     },
     "[typescript]": {
-        "editor.defaultFormatter": "vscode.typescript-language-features"
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "editor.tabSize": 4,
     "editor.insertSpaces": true,
@@ -292,8 +293,9 @@
     // "editor.renderWhitespace": "all",
     "editor.autoClosingDelete": "never",
     "editor.matchBrackets": "never",
-    "terminal.integrated.fontFamily": "Fira Code",
-    "editor.fontWeight": "400",
+    "terminal.integrated.fontFamily": "Red Hat Mono",
+    "terminal.integrated.fontSize": 16,
+    // "editor.fontWeight": "400",
     "bracket-pair-colorizer-2.depreciation-notice": false,
     "terminal.integrated.defaultProfile.windows": "Git Bash",
     "redhat.telemetry.enabled": false,
@@ -348,13 +350,40 @@
     "zenMode.hideLineNumbers": false,
     "editor.lineNumbers": "relative",
     "[python]": {
-        "editor.defaultFormatter": "ms-python.python",
+        "editor.defaultFormatter": "ms-python.black-formatter",
         "editor.rulers": [
             88
         ],
-        "editor.formatOnType": true
+        "editor.formatOnType": true,
     },
+    "python.analysis.typeCheckingMode": "basic",
     "terminal.external.linuxExec": "\\mnt\\c\\Users\\WITCRAFM\\AppData\\Local\\Microsoft\\WindowsApps\\wt.exe",
     "vim.useCtrlKeys": false,
-    "python.formatting.provider": "black",
+    "workbench.colorCustomizations": {
+        "terminal.background": "#2b2d2e",
+        "terminal.foreground": "#D0D0D0",
+        "terminalCursor.background": "#D0D0D0",
+        "terminalCursor.foreground": "#D0D0D0",
+        "terminal.ansiBlack": "#151515",
+        "terminal.ansiBlue": "#6FC2EF",
+        "terminal.ansiBrightBlack": "#505050",
+        "terminal.ansiBrightBlue": "#6FC2EF",
+        "terminal.ansiBrightCyan": "#12CFC0",
+        "terminal.ansiBrightGreen": "#ACC267",
+        "terminal.ansiBrightMagenta": "#E1A3EE",
+        "terminal.ansiBrightRed": "#FB9FB1",
+        "terminal.ansiBrightWhite": "#F5F5F5",
+        "terminal.ansiBrightYellow": "#DDB26F",
+        "terminal.ansiCyan": "#12CFC0",
+        "terminal.ansiGreen": "#ACC267",
+        "terminal.ansiMagenta": "#E1A3EE",
+        "terminal.ansiRed": "#FB9FB1",
+        "terminal.ansiWhite": "#D0D0D0",
+        "terminal.ansiYellow": "#DDB26F",
+    },
+    "[css]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "workbench.iconTheme": "icons",
+    "security.workspace.trust.untrustedFiles": "open",
 }

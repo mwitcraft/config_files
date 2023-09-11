@@ -8,3 +8,6 @@ nnoremap <leader><leader>f :vsc Edit.FormatDocument<CR>
 
 " View Functions
 nnoremap <leader>b :vsc View.NavigateBackward<CR>
+
+" Debug Functions 
+nnoremap <leader>i :vsc Debug.QuickWatch<CR>
