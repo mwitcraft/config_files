@@ -1,0 +1,14 @@
+Applications to Install
+- Visual Studio
+- VS Code
+- Notepad++
+- Git Bash
+- 7Zip
+- Postman
+- PowerToys
+- Logitech Options+
+- Koch ID
+    - https://docs.kochid.com/docs/cli/
+- DBeaver
+- Flameshot
+- PolyLens
