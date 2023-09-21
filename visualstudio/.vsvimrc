@@ -5,6 +5,7 @@ let mapleader=" "
 nnoremap <leader>d :vsc Edit.GoToDefinition<CR>
 nnoremap <leader>o :vsc Edit.GoToFile<CR>
 nnoremap <leader><leader>f :vsc Edit.FormatDocument<CR>
+nnoremap <leader>/ :vsc Edit.ToggleLineComment<CR>
 
 " View Functions
 nnoremap <leader>b :vsc View.NavigateBackward<CR>
