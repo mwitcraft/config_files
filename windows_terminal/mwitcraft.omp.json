@@ -1,44 +1,58 @@
 {
-  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
-  "console_title_template": "{{.Folder}}",
-  "blocks": [
-    {
-      "type": "prompt",
-      "alignment": "left",
-      "segments": [
+    "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+    "console_title_template": "{{.Folder}}",
+    "blocks": [
         {
-          "type": "path",
-          "style": "plain",
-          "template": "{{ .Path }} ",
-          "properties": {
-            "style": "full"
-          },
-          "foreground": "#A3BE8C"
+            "type": "prompt",
+            "alignment": "left",
+            "segments": [
+                {
+                    "type": "text",
+                    "template": "\uEB3A",
+                    "style": "diamond",
+                    "leading_diamond": "\uE0B6",
+                    "powerline_symbol": "\uE0B4",
+                    "background": "#ECEFF4",
+                    "foreground": "#2E3440"
+                },
+                {
+                    "type": "path",
+                    "template": " \uF07B  {{ .Path }} ",
+                    "properties": {
+                        "style": "full"
+                    },
+                    "style": "powerline",
+                    "powerline_symbol": "\ue0b4",
+                    "background": "#5E81AC",
+                    "foreground": "#2E3440"
+                },
+                {
+                    "type": "git",
+                    "template": " {{ .HEAD }} {{ if .Working.Changed }}{{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }}<#000000> {{ .Staging.String }}</>{{ end }} ",
+                    "properties": {
+                        "fetch_status": true,
+                        "branch_icon": "\ue725 "
+                    },
+                    "style": "powerline",
+                    "powerline_symbol": "\ue0b4",
+                    "background": "#B48EAD",
+                    "foreground": "#2E3440"
+                }
+            ]
         },
         {
-          "type": "git",
-          "style": "plain",
-          "template": "<#ECEFF4>on</> {{ .HEAD }} {{ if .Working.Changed }}{{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }}<#ef5350> \uf046 {{ .Staging.String }}</>{{ end }} ",
-          "foreground": "#B48EAD",
-          "properties": {
-            "fetch_status": true
-          }
+            "type": "prompt",
+            "alignment": "left",
+            "newline": true,
+            "segments": [
+                {
+                    "foreground": "#5E81AC",
+                    "style": "plain",
+                    "template": " ",
+                    "type": "text"
+                }
+            ]
         }
-      ]
-    },
-    {
-      "type": "prompt",
-      "alignment": "left",
-      "newline": true,
-      "segments": [
-        {
-          "foreground": "#ECEFF4",
-          "style": "plain",
-          "template": " ",
-          "type": "text"
-        }
-      ]
-    }
-  ],
-  "version": 2
+    ],
+    "version": 2
 }
