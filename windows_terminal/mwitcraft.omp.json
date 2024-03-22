@@ -1,44 +1,64 @@
 {
-  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
-  "console_title_template": "{{.Folder}}",
-  "blocks": [
-    {
-      "type": "prompt",
-      "alignment": "left",
-      "segments": [
+    "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+    "console_title_template": "{{.Folder}}",
+    "palette": {
+        "light":    "#ECEFF4",  // background for icon before path
+        "dark":     "#2E3440",  // text color
+        "accent1":  "#5E81AC",  // background for path section and text color for text indicator (chevron right)
+        "accent2":  "#B48EAD"   // background for git section
+    },  
+    "blocks": [
         {
-          "type": "path",
-          "style": "plain",
-          "template": "{{ .Path }} ",
-          "properties": {
-            "style": "full"
-          },
-          "foreground": "#A3BE8C"
+            "type": "prompt",
+            "alignment": "left",
+            "segments": [
+                {
+                    "type": "text",
+                    "template": "\uEB3A",
+                    "style": "diamond",
+                    "leading_diamond": "\uE0B6",
+                    "powerline_symbol": "\uE0B4",
+                    "background": "p:light",
+                    "foreground": "p:dark"
+                },
+                {
+                    "type": "path",
+                    "template": " \uF07B  {{ .Path }} ",
+                    "properties": {
+                        "style": "full"
+                    },
+                    "style": "powerline",
+                    "powerline_symbol": "\uE0B4",
+                    "background": "p:accent1",
+                    "foreground": "p:dark"
+                },
+                {
+                    "type": "git",
+                    "template": " {{ .HEAD }} {{ if .Working.Changed }}{{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} {{ .Staging.String }}{{ end }}",
+                    "properties": {
+                        "fetch_status": true,
+                        "branch_icon": "󰘬 "
+                    },
+                    "style": "powerline",
+                    "powerline_symbol": "\uE0B4",
+                    "background": "p:accent2",
+                    "foreground": "p:dark"
+                }
+            ]
         },
         {
-          "type": "git",
-          "style": "plain",
-          "template": "<#ECEFF4>on</> {{ .HEAD }} {{ if .Working.Changed }}{{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }}<#ef5350> \uf046 {{ .Staging.String }}</>{{ end }} ",
-          "foreground": "#B48EAD",
-          "properties": {
-            "fetch_status": true
-          }
+            "type": "prompt",
+            "alignment": "left",
+            "newline": true,
+            "segments": [
+                {
+                    "foreground": "p:accent1",
+                    "style": "plain",
+                    "template": " ",
+                    "type": "text"
+                }
+            ]
         }
-      ]
-    },
-    {
-      "type": "prompt",
-      "alignment": "left",
-      "newline": true,
-      "segments": [
-        {
-          "foreground": "#ECEFF4",
-          "style": "plain",
-          "template": " ",
-          "type": "text"
-        }
-      ]
-    }
-  ],
-  "version": 2
+    ],
+    "version": 2
 }
