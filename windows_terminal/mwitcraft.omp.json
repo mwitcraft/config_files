@@ -2,10 +2,10 @@
     "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
     "console_title_template": "{{.Folder}}",
     "palette": {
-        "light":    "#ECEFF4",  // background for icon before path
-        "dark":     "#2E3440",  // text color
-        "accent1":  "#5E81AC",  // background for path section and text color for text indicator (chevron right)
-        "accent2":  "#B48EAD"   // background for git section
+        "purple":   "#B48EAD",
+        "green":    "#A3BE8C",
+        "yellow":   "#EBCB8B",
+        "white":    "#E5E9F0"
     },  
     "blocks": [
         {
@@ -13,36 +13,22 @@
             "alignment": "left",
             "segments": [
                 {
-                    "type": "text",
-                    "template": "\uEB3A",
-                    "style": "diamond",
-                    "leading_diamond": "\uE0B6",
-                    "powerline_symbol": "\uE0B4",
-                    "background": "p:light",
-                    "foreground": "p:dark"
-                },
-                {
                     "type": "path",
-                    "template": " \uF07B  {{ .Path }} ",
+                    "style": "plain",
+                    "template": "{{ .Path }} ",
                     "properties": {
                         "style": "full"
                     },
-                    "style": "powerline",
-                    "powerline_symbol": "\uE0B4",
-                    "background": "p:accent1",
-                    "foreground": "p:dark"
+                    "foreground": "p:green"
                 },
                 {
                     "type": "git",
-                    "template": " {{ .HEAD }} {{ if .Working.Changed }}{{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} {{ .Staging.String }}{{ end }}",
+                    "style": "plain",
+                    "template": "({{ .HEAD }})",
                     "properties": {
-                        "fetch_status": true,
                         "branch_icon": "󰘬 "
                     },
-                    "style": "powerline",
-                    "powerline_symbol": "\uE0B4",
-                    "background": "p:accent2",
-                    "foreground": "p:dark"
+                    "foreground": "p:purple"
                 }
             ]
         },
@@ -52,7 +38,7 @@
             "newline": true,
             "segments": [
                 {
-                    "foreground": "p:accent1",
+                    "foreground": "p:white",
                     "style": "plain",
                     "template": " ",
                     "type": "text"

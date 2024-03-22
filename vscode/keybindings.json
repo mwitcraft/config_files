@@ -6,25 +6,6 @@
         "when": "!editorTextFocus"
     },
     {
-        "key": "ctrl+t",
-        "command": "workbench.action.terminal.focus",
-        "when": "!terminalFocus"
-    },
-    {
-        "key": "ctrl+t",
-        "command": "workbench.action.terminal.toggleTerminal",
-        "when": "terminal.active"
-    },
-    {
-        "key": "ctrl+t",
-        "command": "-workbench.action.showAllSymbols"
-    },
-    {
-        "key": "ctrl+t",
-        "command": "-extension.vim_ctrl+t",
-        "when": "editorTextFocus && vim.active && vim.use<C-t> && !inDebugRepl"
-    },
-    {
         "key": "ctrl+f",
         "command": "-extension.vim_ctrl+f",
         "when": "editorTextFocus && vim.active && vim.use<C-f> && !inDebugRepl && vim.mode != 'Insert'"
@@ -84,5 +65,9 @@
     {
         "key": "ctrl+b",
         "command": "-workbench.action.toggleSidebarVisibility"
+    },
+    {
+        "key": "ctrl+s",
+        "command": "workbench.action.files.saveFiles"
     },
 ]
