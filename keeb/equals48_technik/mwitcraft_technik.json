@@ -1,9 +1,9 @@
 {
   "version": 1,
-  "notes": "Keymap with the normal outer columns",
-  "documentation": "\"This file is a QMK Configurator export. You can import this at <https://config.qmk.fm>. It can also be used directly with QMK's source code.\n\nTo setup your QMK environment check out the tutorial: <https://docs.qmk.fm/#/newbs>\n\nYou can convert this file to a keymap.c using this command: `qmk json2c {keymap}`\n\nYou can compile this keymap using this command: `qmk compile {keymap}`\"\n",
+  "notes": "mwitcraft technik keymap",
+  "documentation": "",
   "keyboard": "boardsource/equals/48",
-  "keymap": "mwitcraft_outer_cols",
+  "keymap": "mwitcraft",
   "layout": "LAYOUT_ortho_4x12",
   "layers": [
     [
@@ -19,7 +19,6 @@
       "KC_O",
       "KC_P",
       "KC_BSPC",
-
       "RSA(KC_NO)",
       "KC_A",
       "KC_S",
@@ -32,7 +31,6 @@
       "KC_L",
       "KC_SCLN",
       "KC_ENT",
-
       "KC_LSFT",
       "KC_Z",
       "KC_X",
@@ -45,7 +43,6 @@
       "KC_DOT",
       "KC_SLSH",
       "KC_QUOT",
-
       "KC_LCTL",
       "MO(4)",
       "KC_LGUI",
@@ -72,7 +69,6 @@
       "KC_PLUS",
       "KC_EQL",
       "KC_DEL",
-
       "KC_TRNS",
       "KC_TILD",
       "KC_GRV",
@@ -85,7 +81,6 @@
       "KC_MINS",
       "KC_UNDS",
       "KC_TRNS",
-
       "KC_TRNS",
       "KC_TRNS",
       "KC_TRNS",
@@ -98,7 +93,6 @@
       "KC_GT",
       "KC_BSLS",
       "KC_PIPE",
-
       "KC_TRNS",
       "KC_TRNS",
       "KC_TRNS",
@@ -125,7 +119,6 @@
       "KC_TRNS",
       "KC_TRNS",
       "KC_TRNS",
-
       "KC_TRNS",
       "KC_TRNS",
       "KC_TRNS",
@@ -138,7 +131,6 @@
       "KC_RGHT",
       "KC_TRNS",
       "KC_TRNS",
-
       "KC_TRNS",
       "KC_TRNS",
       "KC_TRNS",
@@ -151,7 +143,6 @@
       "KC_TRNS",
       "KC_TRNS",
       "KC_TRNS",
-
       "KC_TRNS",
       "KC_TRNS",
       "KC_TRNS",
@@ -178,7 +169,6 @@
       "KC_TRNS",
       "KC_TRNS",
       "KC_TRNS",
-
       "KC_TRNS",
       "KC_TRNS",
       "KC_TRNS",
@@ -191,7 +181,6 @@
       "KC_TRNS",
       "KC_TRNS",
       "KC_TRNS",
-
       "KC_TRNS",
       "KC_TRNS",
       "KC_TRNS",
@@ -204,7 +193,6 @@
       "KC_TRNS",
       "KC_TRNS",
       "KC_TRNS",
-
       "KC_TRNS",
       "KC_TRNS",
       "KC_TRNS",
@@ -219,10 +207,10 @@
       "KC_TRNS"
     ],
     [
-      "KC_TRNS",
-      "KC_TRNS",
-      "KC_TRNS",
-      "KC_TRNS",
+      "BL_TOGG",
+      "BL_STEP",
+      "BL_DOWN",
+      "BL_UP",
       "KC_TRNS",
       "KC_TRNS",
       "KC_F7",
@@ -230,11 +218,10 @@
       "KC_F9",
       "KC_TRNS",
       "KC_TRNS",
-      "KC_TRNS",
-
-      "KC_TRNS",
-      "KC_TRNS",
-      "KC_TRNS",
+      "QK_BOOT",
+      "RGB_TOG",
+      "RGB_RMOD",
+      "RGB_MOD",
       "KC_TRNS",
       "KC_TRNS",
       "KC_TRNS",
@@ -244,7 +231,6 @@
       "KC_TRNS",
       "KC_TRNS",
       "KC_TRNS",
-
       "KC_TRNS",
       "KC_TRNS",
       "KC_TRNS",
@@ -257,7 +243,6 @@
       "KC_TRNS",
       "KC_TRNS",
       "KC_TRNS",
-
       "KC_TRNS",
       "KC_TRNS",
       "KC_TRNS",
