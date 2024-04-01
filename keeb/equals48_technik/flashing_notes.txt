@@ -1,0 +1,9 @@
+1. Create keymap on `config.qmk.fm`
+2. Compile and download the firmware (should be uf2 file)
+3. Put keyboard in `boot` mode
+    - Hold top left key while plugging in
+    - Press boot button that was mapped
+    - Press reset button on back of board
+4. Computer sees keyboard in boot mode as just another storage device
+5. Drag UF2 file to the root of the storage device 
+6. Done!
