@@ -14,3 +14,6 @@ Set-Alias -Name ls -Value ls_git -Option Private
 
 # Enables zoxide
 Invoke-Expression (& { (zoxide init powershell | Out-String) })
+
+# Import posh-git (allows git branch tab completion)
+Import-Module posh-git
