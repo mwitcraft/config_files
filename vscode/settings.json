@@ -5,269 +5,54 @@
     "vim.leader": " ",
     "vim.normalModeKeyBindingsNonRecursive": [
         // VIM remaps
-        {
-            "before": [
-                "leader",
-                "z"
-            ],
-            "after": [
-                "z",
-                "z"
-            ]
-        },
-        // Scroll down
-        {
-            "before": [
-                "J"
-            ],
-            "after": [
-                "<C-e>"
-            ]
-        },
-        // Scroll down
-        {
-            "before": [
-                "<C-j>"
-            ],
-            "after": [
-                "<C-e>"
-            ]
-        },
-        // Scroll up 
-        {
-            "before": [
-                "K"
-            ],
-            "after": [
-                "<C-y>"
-            ]
-        },
-        // Scroll up 
-        {
-            "before": [
-                "<C-k>"
-            ],
-            "after": [
-                "<C-y>"
-            ]
-        },
-        {
-            "before": [
-                "leader",
-                "f"
-            ],
-            "after": [
-                "/"
-            ]
-        },
         // VSCode commands
-        {
-            "before": [
-                "leader",
-                "d"
-            ],
-            "commands": [
-                "editor.action.revealDefinition"
-            ]
-        },
-        {
-            "before": [
-                "leader",
-                "/"
-            ],
-            "commands": [
-                "editor.action.commentLine"
-            ]
-        },
-        {
-            "before": [
-                "leader",
-                "."
-            ],
-            "commands": [
-                "editor.action.quickFix"
-            ]
-        },
-        {
-            "before": [
-                "leader",
-                "o"
-            ],
-            "commands": [
-                "workbench.action.quickOpen"
-            ]
-        },
-        {
-            "before": [
-                "leader",
-                "enter"
-            ],
-            "commands": [
-                "workbench.action.showCommands"
-            ]
-        },
-        {
-            "before": [
-                "leader",
-                "b"
-            ],
-            "commands": [
-                "workbench.action.navigateBack"
-            ]
-        },
-        {
-            "before": [
-                "leader",
-                "m"
-            ],
-            "commands": [
-                "workbench.action.toggleSidebarVisibility"
-            ]
-        },
-        {
-            "before": [
-                "leader",
-                "leader",
-                "f"
-            ],
-            "commands": [
-                "editor.action.formatDocument"
-            ]
-        },
-        {
-            "before": [
-                "leader",
-                "r"
-            ],
-            "commands": [
-                "editor.action.rename"
-            ]
-        },
-        {
-            "before": [
-                "leader",
-                "t",
-                "l"
-            ],
-            "commands": [
-                "workbench.action.nextEditor"
-            ]
-        },
-        {
-            "before": [
-                "leader",
-                "t",
-                "h"
-            ],
-            "commands": [
-                "workbench.action.previousEditor"
-            ]
-        },
-        {
-            "before": [
-                "leader",
-                "leader",
-                "r"
-            ],
-            "commands": [
-                "workbench.action.debug.start"
-            ]
-        },
-        // VSCode commands
+        { "before": [ "leader", "d" ], "commands": [ "editor.action.revealDefinition" ] },
+        { "before": [ "leader", "/" ], "commands": [ "editor.action.commentLine" ] },
+        { "before": [ "leader", "." ], "commands": [ "editor.action.quickFix" ] },
+        { "before": [ "leader", "b" ], "commands": [ "workbench.action.navigateBack" ] },
+        { "before": [ "leader", "m" ], "commands": [ "workbench.action.toggleSidebarVisibility" ] },
+        { "before": [ "leader", "leader", "f" ], "commands": [ "editor.action.formatDocument" ] },
+        { "before": [ "leader", "r" ], "commands": [ "references-view.findReferences" ] },
+        { "before": [ "leader", "t", "l" ], "commands": [ "workbench.action.nextEditor" ] },
+        { "before": [ "leader", "t", "h" ], "commands": ["workbench.action.previousEditor" ] },
         // Windows
-        {
-            "before": [
-                "leader",
-                "l"
-            ],
-            "commands": [
-                "workbench.action.focusRightGroup"
-            ]
-        },
-        {
-            "before": [
-                "leader",
-                "h"
-            ],
-            "commands": [
-                "workbench.action.focusLeftGroup"
-            ]
-        },
-        {
-            "before": [
-                "leader",
-                "j"
-            ],
-            "commands": [
-                "workbench.action.focusSecondEditorGroup"
-            ]
-        },
-        {
-            "before": [
-                "leader",
-                "k"
-            ],
-            "commands": [
-                "workbench.action.focusFirstEditorGroup"
-            ]
-        }
-        // Windows
+        { "before": [ "leader", "l" ], "commands": [ "workbench.action.focusRightGroup" ] },
+        { "before": [ "leader", "h" ], "commands": [ "workbench.action.focusLeftGroup" ] },
+        { "before": [ "leader", "j" ], "commands": [ "workbench.action.focusSecondEditorGroup" ] },
+        { "before": [ "leader", "k" ], "commands": [ "workbench.action.focusFirstEditorGroup" ] },
+        { "before": [ "leader", "q" ], "commands": [ "workbench.action.experimental.quickTextSearch" ] },
+        { "before": [ "leader", "right" ], "commands": [ "workbench.action.splitEditorToRightGroup" ] },
+        { "before": [ "leader", "left" ], "commands": [ "workbench.action.splitEditorLeft" ] },
+        { "before": [ "leader", "tab" ], "commands": [ "workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup" ] },
+        { "before": [ "leader", "up" ], "commands": [ "workbench.action.toggleMaximizeEditorGroup" ] },
+
+        // VIM EasyMotion
+        { "before": [ "s" ], "after": [ "leader", "leader", "s" ] },
+        { "before": [ "f" ], "after": ["leader", "leader", "f"] },
+        { "before": [ "F" ], "after": ["leader", "leader", "F"] },
+
+        // Other 
+        { "before": [ "leader", "," ], "after": [ "g", "h" ] },
     ],
     "vim.visualModeKeyBindingsNonRecursive": [
-        {
-            "before": [
-                "leader",
-                "/"
-            ],
-            "commands": [
-                "editor.action.commentLine"
-            ]
-        },
-        // Center screen
-        {
-            "before": [
-                "leader",
-                "z"
-            ],
-            "after": [
-                "z",
-                "z"
-            ]
-        },
-        // Scroll down
-        {
-            "before": [
-                "J"
-            ],
-            "after": [
-                "<C-e>"
-            ]
-        },
-        // Scroll up 
-        {
-            "before": [
-                "K"
-            ],
-            "after": [
-                "<C-y>"
-            ]
-        },
+        { "before": [ "leader", "/" ], "commands": [ "editor.action.commentLine" ] },
+        // VIM EasyMotion
+        { "before": [ "s" ], "after": [ "leader", "leader", "s" ] },
+        { "before": [ "f" ], "after": ["leader", "leader", "f"] },
+        { "before": [ "F" ], "after": ["leader", "leader", "F"] },
     ],
-    "editor.fontFamily": "Fira Code",
-    // "editor.fontFamily": "FiraMono Nerd Font",
+    "editor.fontFamily": "Monaspace Neon Light",
+    // "editor.fontFamily": "Fira Code",
     "editor.fontLigatures": true,
     "explorer.confirmDelete": false,
     "[html]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
+        "editor.defaultFormatter": "vscode.html-language-features"
     },
     "explorer.confirmDragAndDrop": false,
-    "[json]": {
-        "editor.defaultFormatter": "vscode.json-language-features"
-    },
     "files.associations": {
         "*.json": "jsonc"
     },
-    "editor.fontSize": 16,
+    "editor.fontSize": 15,
     "typescript.suggest.paths": true,
     "[jsonc]": {
         "editor.defaultFormatter": "vscode.json-language-features"
@@ -279,7 +64,7 @@
         "editor.defaultFormatter": "vscode.typescript-language-features"
     },
     "[typescript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
+        "editor.defaultFormatter": "vscode.typescript-language-features"
     },
     "editor.tabSize": 4,
     "editor.insertSpaces": true,
@@ -287,70 +72,65 @@
     "typescript.updateImportsOnFileMove.enabled": "always",
     "javascript.updateImportsOnFileMove.enabled": "always",
     "editor.suggestSelection": "first",
-    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-    "workbench.colorTheme": "Nord",
-    "workbench.editor.untitled.hint": "hidden",
+    "workbench.colorTheme": "Gruvbox Light Hard",
     // "editor.renderWhitespace": "all",
     "editor.autoClosingDelete": "never",
     "editor.matchBrackets": "never",
     "terminal.integrated.fontFamily": "FiraMono Nerd Font",
     "terminal.integrated.fontSize": 16,
     // "editor.fontWeight": "400",
-    "bracket-pair-colorizer-2.depreciation-notice": false,
-    "terminal.integrated.defaultProfile.windows": "Git Bash",
-    "redhat.telemetry.enabled": false,
-    "yaml.customTags": [
-        "!And",
-        "!If",
-        "!Not",
-        "!Equals",
-        "!Or",
-        "!FindInMap sequence",
-        "!Base64",
-        "!Cidr",
-        "!Ref",
-        "!Sub",
-        "!GetAtt",
-        "!GetAZs",
-        "!ImportValue",
-        "!Select",
-        "!Select sequence",
-        "!Split",
-        "!Join sequence",
-        "!And sequence",
-        "!If sequence",
-        "!Not sequence",
-        "!Equals sequence",
-        "!Or sequence",
-        "!FindInMap",
-        "!Join",
-        "!Sub sequence",
-        "!ImportValue sequence",
-        "!Split sequence"
-    ],
+    "terminal.integrated.defaultProfile.windows": "PowerShell",
     "editor.unicodeHighlight.invisibleCharacters": false,
     "editor.guides.bracketPairs": "active",
     "explorer.copyRelativePathSeparator": "/",
     "http.proxySupport": "off",
     "zenMode.fullScreen": false,
     "zenMode.centerLayout": false,
-    "zenMode.hideTabs": false,
     "zenMode.hideLineNumbers": false,
-    "editor.lineNumbers": "relative",
-    "[python]": {
-        "editor.defaultFormatter": "ms-python.black-formatter",
-        "editor.rulers": [
-            88
-        ],
-        "editor.formatOnType": true,
-    },
-    "python.analysis.typeCheckingMode": "basic",
+    // "editor.lineNumbers": "relative",
     "terminal.external.linuxExec": "\\mnt\\c\\Users\\WITCRAFM\\AppData\\Local\\Microsoft\\WindowsApps\\wt.exe",
     "vim.useCtrlKeys": false,
-    "[css]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "workbench.iconTheme": "icons",
     "security.workspace.trust.untrustedFiles": "open",
     "git.openRepositoryInParentFolders": "never",
+    "workbench.editor.empty.hint": "hidden",
+    "diffEditor.hideUnchangedRegions.enabled": true,
+    "editor.lineNumbers": "on",
+    "editor.glyphMargin": true,
+    "workbench.editorAssociations": {
+        "*.zip": "default",
+        "*.HEIC": "default"
+    },
+    "[scss]": {
+        "editor.defaultFormatter": "vscode.css-language-features"
+    },
+    "editor.stickyScroll.enabled": false,
+    "editor.guides.indentation": false,
+    "terminal.integrated.env.windows": {},
+    "vim.easymotion": true,
+    "extensions.experimental.affinity": {
+        "vscodevim.vim": 1,
+    },
+    "powershell.promptToUpdatePowerShell": false,
+    "workbench.colorCustomizations": {  // Gruvbox dark
+        "terminal.background": "#282828",
+        "terminal.foreground": "#ebdbb2",
+        "terminalCursor.background": "#ebdbb2",
+        "terminalCursor.foreground": "#ebdbb2",
+        "terminal.ansiBlack": "#282828",
+        "terminal.ansiRed": "#cc241d",
+        "terminal.ansiGreen": "#98971a",
+        "terminal.ansiYellow": "#d79921",
+        "terminal.ansiBlue": "#458588",
+        "terminal.ansiMagenta": "#b16286",
+        "terminal.ansiCyan": "#689d6a",
+        "terminal.ansiWhite": "#a89984",
+        "terminal.ansiBrightBlack": "#928374",
+        "terminal.ansiBrightRed": "#fb4934",
+        "terminal.ansiBrightGreen": "#b8bb26",
+        "terminal.ansiBrightYellow": "#fabd2f",
+        "terminal.ansiBrightBlue": "#83a598",
+        "terminal.ansiBrightMagenta": "#d3869b",
+        "terminal.ansiBrightCyan": "#8ec07c",
+        "terminal.ansiBrightWhite": "#ebdbb2"
+    }
 }
