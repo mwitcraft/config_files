@@ -41,8 +41,7 @@
         { "before": [ "f" ], "after": ["leader", "leader", "f"] },
         { "before": [ "F" ], "after": ["leader", "leader", "F"] },
     ],
-    "editor.fontFamily": "Monaspace Neon Light",
-    // "editor.fontFamily": "Fira Code",
+    "editor.fontFamily": "Source Code Pro",
     "editor.fontLigatures": true,
     "explorer.confirmDelete": false,
     "[html]": {
@@ -72,7 +71,7 @@
     "typescript.updateImportsOnFileMove.enabled": "always",
     "javascript.updateImportsOnFileMove.enabled": "always",
     "editor.suggestSelection": "first",
-    "workbench.colorTheme": "Gruvbox Light Hard",
+    "workbench.colorTheme": "Solarized Light",
     // "editor.renderWhitespace": "all",
     "editor.autoClosingDelete": "never",
     "editor.matchBrackets": "never",
