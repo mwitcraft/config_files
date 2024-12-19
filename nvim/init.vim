@@ -5,6 +5,11 @@ set number
 syntax on
 set termguicolors  " Allows 24-bit color in the terminal, for better syntax highlighting
 
+" Use spaces for tabs
+set expandtab
+set tabstop=4
+set shiftwidth=4
+
 " Copy/Paste with Ctrl+C and Ctrl+V
 if has("win32") || has("win64")
     " Windows

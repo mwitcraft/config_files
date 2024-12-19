@@ -41,7 +41,7 @@
         { "before": [ "f" ], "after": ["leader", "leader", "f"] },
         { "before": [ "F" ], "after": ["leader", "leader", "F"] },
     ],
-    "editor.fontFamily": "Source Code Pro",
+    "editor.fontFamily": "SauceCodePro Nerd Font",
     "editor.fontLigatures": true,
     "explorer.confirmDelete": false,
     "[html]": {
@@ -75,7 +75,7 @@
     // "editor.renderWhitespace": "all",
     "editor.autoClosingDelete": "never",
     "editor.matchBrackets": "never",
-    "terminal.integrated.fontFamily": "FiraMono Nerd Font",
+    "terminal.integrated.fontFamily": "SauceCodePro Nerd Font",
     "terminal.integrated.fontSize": 16,
     // "editor.fontWeight": "400",
     "terminal.integrated.defaultProfile.windows": "PowerShell",
@@ -131,5 +131,26 @@
         "terminal.ansiBrightMagenta": "#d3869b",
         "terminal.ansiBrightCyan": "#8ec07c",
         "terminal.ansiBrightWhite": "#ebdbb2"
-    }
+    },
+    "github.copilot.advanced": {
+        "authProvider": "github"
+    },
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true,
+        "node_modules": true,
+        "dist": true,
+        "bin": true,
+    },
+    "search.exclude": {
+        "**/node_modules": true,
+        "**/bower_components": true,
+        "**/*.code-search": true
+    },
+    "redhat.telemetry.enabled": false,
+    "editor.foldingStrategy": "auto",
 }
