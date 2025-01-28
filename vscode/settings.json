@@ -45,7 +45,7 @@
     "editor.fontLigatures": true,
     "explorer.confirmDelete": false,
     "[html]": {
-        "editor.defaultFormatter": "vscode.html-language-features"
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "explorer.confirmDragAndDrop": false,
     "files.associations": {
@@ -65,7 +65,7 @@
     "[typescript]": {
         "editor.defaultFormatter": "vscode.typescript-language-features"
     },
-    "editor.tabSize": 4,
+    "editor.tabSize": 2,
     "editor.insertSpaces": true,
     "editor.detectIndentation": false,
     "typescript.updateImportsOnFileMove.enabled": "always",
@@ -153,4 +153,11 @@
     },
     "redhat.telemetry.enabled": false,
     "editor.foldingStrategy": "auto",
+    "[json]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "todo-tree.general.tags": [
+      "MW-Note",
+      "MW-TODO"
+    ]
 }
