@@ -1,14 +1,15 @@
+# To load this config, add the following to your .gitconfig file:
+#[include]
+#	path = C:/Users/Mason.Witcraft/git/config_files/git/.gitconfig
+
 [user]
-# Please adapt and uncomment the following lines:
 	name = mwitcraft
 	email = mason.witcraft@ineight.com
 [alias]
-# Commit
 	ci = commit
 	cim = commit -m
 	cia = commit --amend --no-edit
 	ciwip = commit -m "wip"
-# Other
 	lg = log --pretty=oneline --abbrev-commit
 	st = status -s
 	co = checkout

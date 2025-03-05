@@ -45,7 +45,7 @@
     "editor.fontLigatures": true,
     "explorer.confirmDelete": false,
     "[html]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
+        "editor.defaultFormatter": "vscode.html-language-features"
     },
     "explorer.confirmDragAndDrop": false,
     "files.associations": {
@@ -63,7 +63,7 @@
         "editor.defaultFormatter": "vscode.typescript-language-features"
     },
     "[typescript]": {
-        "editor.defaultFormatter": "vscode.typescript-language-features"
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "editor.tabSize": 2,
     "editor.insertSpaces": true,
@@ -156,8 +156,15 @@
     "[json]": {
       "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
+    "todo-tree.filtering.includeGlobs": [
+      "**/*.ts",
+      "**/*.html"
+    ],
     "todo-tree.general.tags": [
       "MW-Note",
-      "MW-TODO"
-    ]
+      "MW-Mark",
+    ],
+    "extensions.ignoreRecommendations": true,
+    "workbench.activityBar.location": "top",
+    "breadcrumbs.enabled": false
 }
