@@ -11,11 +11,6 @@
         "when": "editorTextFocus && vim.active && vim.use<C-a> && !inDebugRepl"
     },
     {
-        "key": "ctrl+h",
-        "command": "editor.fold",
-        "when": "editorTextFocus && foldingEnabled"
-    },
-    {
         "key": "ctrl+shift+[",
         "command": "-editor.fold",
         "when": "editorTextFocus && foldingEnabled"
@@ -36,22 +31,26 @@
         "when": "terminal.active"
     },
     {
-        "key": "ctrl+m",
+        "key": "ctrl+h",
         "command": "-extension.vim_ctrl+m",
         "when": "editorTextFocus && vim.active && vim.use<C-m> && !inDebugRepl || vim.active && vim.use<C-m> && !inDebugRepl && vim.mode == 'CommandlineInProgress' || vim.active && vim.use<C-m> && !inDebugRepl && vim.mode == 'SearchInProgressMode'"
     },
     {
-        "key": "ctrl+m",
+        "key": "ctrl+h",
         "command": "-editor.action.toggleTabFocusMode"
     },
     {
-        "key": "ctrl+m",
+        "key": "ctrl+h",
         "command": "workbench.view.explorer"
     },
     {
-        "key": "ctrl+m",
+        "key": "ctrl+h",
         "command": "workbench.action.closeSidebar",
         "when": "sideBarFocus"
+    },
+    {
+      "key": "ctrl+m",
+      "command": "workbench.action.toggleEditorWidths",
     },
     {
         "key": "ctrl+0",

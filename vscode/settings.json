@@ -1,6 +1,5 @@
 {
     "workbench.sideBar.location": "right",
-    "editor.minimap.enabled": false,
     "workbench.startupEditor": "newUntitledFile",
     "vim.leader": " ",
     "vim.normalModeKeyBindingsNonRecursive": [
@@ -40,6 +39,7 @@
         { "before": [ "s" ], "after": [ "leader", "leader", "s" ] },
         { "before": [ "f" ], "after": ["leader", "leader", "f"] },
         { "before": [ "F" ], "after": ["leader", "leader", "F"] },
+        { "before": [ "leader", "leader", "f" ], "commands": [ "editor.action.formatSelection" ]}
     ],
     "editor.fontFamily": "SauceCodePro Nerd Font",
     "editor.fontLigatures": true,
@@ -63,7 +63,7 @@
         "editor.defaultFormatter": "vscode.typescript-language-features"
     },
     "[typescript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
+        "editor.defaultFormatter": "vscode.typescript-language-features"
     },
     "editor.tabSize": 2,
     "editor.insertSpaces": true,
@@ -96,8 +96,10 @@
     "editor.lineNumbers": "on",
     "editor.glyphMargin": true,
     "workbench.editorAssociations": {
-        "*.zip": "default",
-        "*.HEIC": "default"
+      "*.copilotmd": "vscode.markdown.preview.editor",
+      "*.zip": "default",
+      "*.HEIC": "default",
+      "*.xlsx": "default"
     },
     "[scss]": {
         "editor.defaultFormatter": "vscode.css-language-features"
@@ -165,6 +167,34 @@
       "MW-Mark",
     ],
     "extensions.ignoreRecommendations": true,
-    "workbench.activityBar.location": "top",
-    "breadcrumbs.enabled": false
+    "editor.minimap.enabled": false,
+    "git.blame.editorDecoration.enabled": false,
+    "csv.enabled": false,
+    "zenMode.showTabs": "none",
+    "mssql.connectionGroups": [
+      {
+        "name": "ROOT",
+        "id": "2D5E7D4A-0F04-43A9-A563-384C8C67D270"
+      }
+    ],
+    "mssql.connections": [
+      {
+        "authenticationType": "Integrated",
+        "connectTimeout": 15,
+        "applicationName": "vscode-mssql",
+        "profileName": "local",
+        "server": ".",
+        "trustServerCertificate": true,
+        "encrypt": "Mandatory",
+        "database": "I8Plan",
+        "commandTimeout": 30,
+        "profileSource": 1,
+        "groupId": "2D5E7D4A-0F04-43A9-A563-384C8C67D270",
+        "id": "947BB787-4EA2-4EF4-94DD-B9EDDAF1A72F",
+        "password": ""
+      }
+    ],
+    "mssql.objectExplorer.groupBySchema": false,
+    "mssql.openQueryResultsInTabByDefault": true,
+    "mssql.openQueryResultsInTabByDefaultDoNotShowPrompt": true
 }

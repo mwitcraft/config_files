@@ -1,15 +1,22 @@
+" Place in home directory as _vsvimrc
+" Dependencies: VSVIM, PeasyMotion
+
 set ignorecase
 let mapleader=" "
+
+" Source (to setup first run, go to command mode (type ':') and enter `source {vsvimrc file location}`)
+nnoremap <leader><leader>s :source ~/_vsvimrc
 
 " Edit Functions
 nnoremap <leader>d :vsc Edit.GoToDefinition<CR>
 nnoremap <leader>i :vsc Edit.GoToImplementation<CR>
 nnoremap <leader><leader>f :vsc Edit.FormatDocument<CR>
 nnoremap <leader>/ :vsc Edit.ToggleLineComment<CR>
-
 nnoremap f :vsc Tools.InvokePeasyMotionOneCharJump<CR>
 
 " View Functions
+nnoremap <leader>l :vsc Window.NextDocumentWindow<CR>
+nnoremap <leader>h :vsc Window.PreviousDocumentWindow<CR>
 nnoremap <leader>b :vsc View.NavigateBackward<CR>
 nnoremap <leader>g :vsc View.GitHub.Copilot.Chat<CR>
 
