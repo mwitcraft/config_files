@@ -32,21 +32,7 @@
     },
     {
         "key": "ctrl+h",
-        "command": "-extension.vim_ctrl+m",
-        "when": "editorTextFocus && vim.active && vim.use<C-m> && !inDebugRepl || vim.active && vim.use<C-m> && !inDebugRepl && vim.mode == 'CommandlineInProgress' || vim.active && vim.use<C-m> && !inDebugRepl && vim.mode == 'SearchInProgressMode'"
-    },
-    {
-        "key": "ctrl+h",
-        "command": "-editor.action.toggleTabFocusMode"
-    },
-    {
-        "key": "ctrl+h",
-        "command": "workbench.view.explorer"
-    },
-    {
-        "key": "ctrl+h",
-        "command": "workbench.action.closeSidebar",
-        "when": "sideBarFocus"
+        "command": "workbench.action.toggleSidebarVisibility"
     },
     {
       "key": "ctrl+m",
@@ -118,27 +104,13 @@
     },
     {
         "key": "ctrl+g",
-        "command": "workbench.panel.chat.view.copilot.focus",
-        "when": "view != 'github.copilot'"
+        "command": "workbench.action.toggleAuxiliaryBar",
+        "when": "auxiliaryBarVisible"
     },
     {
-        "key": "ctrl+g",
-        "command": "workbench.action.closeSidebar",
-        "when": "sideBarFocus"
-    },
-    {
-        "key": "ctrl+g",
-        "command": "-workbench.action.gotoLine"
-    },
-    {
-        "key": "ctrl+g",
-        "command": "-workbench.action.terminal.goToRecentDirectory",
-        "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
-    },
-    {
-        "key": "ctrl+g",
-        "command": "-extension.vim_ctrl+g",
-        "when": "editorTextFocus && vim.active && vim.use<C-g> && !inDebugRepl"
+      "key": "ctrl+g",
+      "command": "workbench.panel.chat.view.copilot.focus",
+      "when": "!auxiliaryBarVisible"
     },
     {
         "key": "ctrl+enter",
@@ -149,5 +121,24 @@
         "key": "ctrl+shift+e",
         "command": "-mssql.runQuery",
         "when": "editorTextFocus && editorLangId == 'sql'"
-    }
+    },
+    {
+      "key": "ctrl+l",
+      "command": "turboConsoleLog.displayLogMessage",
+      "when": "editorTextFocus"
+    },
+    {
+      "key": "ctrl+alt+l",
+      "command": "-turboConsoleLog.displayLogMessage"
+    },
+    {
+      "key": "ctrl+e",
+      "command": "workbench.action.quickOpen",
+      "args": "edt "
+    },
+    {
+      "key": "ctrl+tab",
+      "command": "workbench.action.quickOpen",
+      "args": "edt "
+    },
 ]

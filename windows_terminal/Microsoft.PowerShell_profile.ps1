@@ -57,5 +57,108 @@ function ff {
     }
 }
 
+function runner {
+  param(
+    [Parameter(Mandatory=$true)]
+    [string]$Location,
+
+    [Parameter(Mandatory=$true)]
+    [string]$Command
+  )
+
+  Set-Location $Location
+  Invoke-Expression $Command
+}
+
+Set-Alias Run_PlanUpgrade Run_PlanUpgrade_Fn
+function Run_PlanUpgrade_Fn {
+  runner "C:\Users\Mason.Witcraft\git\Plan\Plan\InEight.Plan.Presentation\PlanUpgrade" "ng build --watch"
+}
+
+Set-Alias Run_Echo Run_Echo_Fn
+function Run_Echo_Fn {
+  Write-Host "ECHO... Echo... echo..."
+}
+
+# Define runner-based aliases explicitly
+$runnerAliases = @(
+    'Run_PlanUpgrade',
+    'Run_Echo'
+)
+
+Set-Alias run RunnerAliasMenu
+function RunnerAliasMenu {
+    param([string[]]$Aliases = $runnerAliases)
+
+    if ($Aliases.Count -eq 0) {
+        Write-Host "No runner-based aliases defined."
+        return
+    }
+
+    $index = 0
+
+    # Print the menu once
+    foreach ($alias in $Aliases) {
+        Write-Host "  $alias"
+    }
+
+    # Save the starting cursor position
+    $menuStart = $host.UI.RawUI.CursorPosition
+    $menuStart = @{ X = 0; Y = $menuStart.Y - $Aliases.Count }
+
+    # Highlight the initial selection
+    function UpdateHighlight {
+        for ($i = 0; $i -lt $Aliases.Count; $i++) {
+            $host.UI.RawUI.CursorPosition = @{ X=0; Y=$menuStart.Y + $i }
+            if ($i -eq $index) {
+                Write-Host "> $($Aliases[$i])" -ForegroundColor Cyan
+            } else {
+                Write-Host "  $($Aliases[$i])"
+            }
+        }
+    }
+
+    UpdateHighlight
+
+    while ($true) {
+        $key = $host.UI.RawUI.ReadKey("NoEcho,IncludeKeyDown")
+
+        # Enter key
+        if ($key.Character -eq "`r" -or $key.VirtualKeyCode -eq 13) {
+            break
+        }
+
+        # Escape key
+        if ($key.Character -eq "") {
+            # Clear the menu before exiting
+            for ($i = 0; $i -lt $Aliases.Count; $i++) {
+                $host.UI.RawUI.CursorPosition = @{ X=0; Y=$menuStart.Y + $i }
+                Write-Host (" " * ($Aliases[$i].Length + 2)) -NoNewline
+            }
+            return
+        }
+
+        switch ($key.Character) {
+            'j' { if ($index -lt $Aliases.Count - 1) { $index++ } }
+            'k' { if ($index -gt 0) { $index-- } }
+        }
+
+        UpdateHighlight
+    }
+
+    # Clear the menu before running the selected alias
+    for ($i = 0; $i -lt $Aliases.Count; $i++) {
+        $host.UI.RawUI.CursorPosition = @{ X=0; Y=$menuStart.Y + $i }
+        Write-Host (" " * ($Aliases[$i].Length + 2))
+    }
+
+    # Move cursor to where the menu started
+    $host.UI.RawUI.CursorPosition = @{ X=0; Y=$menuStart.Y }
+
+    $selectedAlias = $Aliases[$index]
+    Write-Host "Executing $selectedAlias...`n"
+    & $selectedAlias
+}
+
 # Import posh-git (allows git branch tab completion)
 Import-Module posh-git
