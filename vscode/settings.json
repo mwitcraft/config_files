@@ -5,18 +5,17 @@
     "vim.normalModeKeyBindingsNonRecursive": [
         // VIM remaps
         // VSCode commands
-        { "before": [ "leader", "d" ], "commands": [ "editor.action.revealDefinition" ] },
+        { "before": [ "g", "d" ], "commands": [ "editor.action.revealDefinition" ] },
+        { "before": [ "g", "i" ], "commands": [ "editor.action.goToImplementation" ] },
+        { "before": [ "g", "u" ], "commands": [ "references-view.findReferences" ] },
         { "before": [ "leader", "/" ], "commands": [ "editor.action.commentLine" ] },
         { "before": [ "leader", "." ], "commands": [ "editor.action.quickFix" ] },
         { "before": [ "leader", "b" ], "commands": [ "workbench.action.navigateBack" ] },
         { "before": [ "leader", "leader", "f" ], "commands": [ "editor.action.formatDocument" ] },
-        { "before": [ "leader", "r" ], "commands": [ "references-view.findReferences" ] },
 
         // Windows
         { "before": [ "leader", "l" ], "commands": [ "workbench.action.focusRightGroup" ] },
         { "before": [ "leader", "h" ], "commands": [ "workbench.action.focusLeftGroup" ] },
-        { "before": [ "leader", "j" ], "commands": [ "workbench.action.focusSecondEditorGroup" ] },
-        { "before": [ "leader", "k" ], "commands": [ "workbench.action.focusFirstEditorGroup" ] },
         { "before": [ "leader", "q" ], "commands": [ "workbench.action.experimental.quickTextSearch" ] },
         { "before": [ "leader", "right" ], "commands": [ "workbench.action.splitEditorToRightGroup" ] },
         { "before": [ "leader", "left" ], "commands": [ "workbench.action.splitEditorLeft" ] },
@@ -48,7 +47,7 @@
     "editor.fontLigatures": true,
     "explorer.confirmDelete": false,
     "[html]": {
-        "editor.defaultFormatter": "vscode.html-language-features"
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
     },
     "explorer.confirmDragAndDrop": false,
     "files.associations": {
@@ -89,14 +88,12 @@
     "zenMode.fullScreen": false,
     "zenMode.centerLayout": false,
     "zenMode.hideLineNumbers": false,
-    // "editor.lineNumbers": "relative",
+    "editor.lineNumbers": "on",
     "terminal.external.linuxExec": "\\mnt\\c\\Users\\WITCRAFM\\AppData\\Local\\Microsoft\\WindowsApps\\wt.exe",
     "vim.useCtrlKeys": false,
     "security.workspace.trust.untrustedFiles": "open",
     "git.openRepositoryInParentFolders": "never",
     "workbench.editor.empty.hint": "hidden",
-    "diffEditor.hideUnchangedRegions.enabled": true,
-    "editor.lineNumbers": "on",
     "editor.glyphMargin": true,
     "workbench.editorAssociations": {
       "*.copilotmd": "vscode.markdown.preview.editor",
@@ -114,7 +111,8 @@
     "extensions.experimental.affinity": {
         "vscodevim.vim": 1,
     },
-    "workbench.colorCustomizations": {  // Gruvbox dark
+    "workbench.colorCustomizations": {
+        // Terminal - Gruvbox Dark
         "terminal.background": "#282828",
         "terminal.foreground": "#ebdbb2",
         "terminalCursor.background": "#ebdbb2",
@@ -134,7 +132,7 @@
         "terminal.ansiBrightBlue": "#83a598",
         "terminal.ansiBrightMagenta": "#d3869b",
         "terminal.ansiBrightCyan": "#8ec07c",
-        "terminal.ansiBrightWhite": "#ebdbb2"
+        "terminal.ansiBrightWhite": "#ebdbb2",
     },
     "github.copilot.advanced": {
         "authProvider": "github"
@@ -155,25 +153,29 @@
         "**/bower_components": true,
         "**/*.code-search": true
     },
-    "redhat.telemetry.enabled": false,
     "editor.foldingStrategy": "auto",
     "[json]": {
-      "editor.defaultFormatter": "esbenp.prettier-vscode"
+      "editor.defaultFormatter": "vscode.json-language-features"
     },
     "extensions.ignoreRecommendations": true,
     "git.blame.editorDecoration.enabled": false,
-    "csv.enabled": false,
     "zenMode.showTabs": "none",
     "mssql.connectionGroups": [
       {
         "name": "ROOT",
-        "id": "2D5E7D4A-0F04-43A9-A563-384C8C67D270"
+        "id": "ROOT"
       },
       {
         "name": "Feature Stamps",
         "color": "#0078D4",
         "id": "E306ACBA-DCB5-4808-94B4-98117915230D",
-        "parentId": "2D5E7D4A-0F04-43A9-A563-384C8C67D270"
+        "parentId": "ROOT"
+      },
+      {
+        "name": "QA",
+        "color": "#038387",
+        "id": "81DBD8A1-D7BB-4E1F-B4B1-CD5133E32D51",
+        "parentId": "ROOT"
       }
     ],
     "mssql.connections": [
@@ -245,6 +247,27 @@
         "connectTimeout": 30,
         "applicationName": "vscode-mssql",
         "applicationIntent": "ReadWrite",
+        "profileName": "F3 - Plan",
+        "groupId": "E306ACBA-DCB5-4808-94B4-98117915230D",
+        "server": "fssbxscussql.database.windows.net",
+        "trustServerCertificate": true,
+        "accountId": "64019998-6210-4c28-9faa-8d55b6231f67.bd552577-889f-46d7-9b56-f1220279c9c0",
+        "database": "FS-F3-FS-SBX-SCUS-DB-I8Plan",
+        "encrypt": "Mandatory",
+        "user": "Mason Witcraft - Mason.Witcraft@INEIGHT.COM",
+        "email": "Mason.Witcraft@INEIGHT.COM",
+        "azureAccountToken": "",
+        "expiresOn": 1765558471,
+        "id": "097551AB-D31F-43DC-81D8-D7BF15FD2508",
+        "password": "",
+        "commandTimeout": 30,
+        "profileSource": 0
+      },
+      {
+        "authenticationType": "AzureMFA",
+        "connectTimeout": 30,
+        "applicationName": "vscode-mssql",
+        "applicationIntent": "ReadWrite",
         "profileName": "Feature Stamps",
         "server": "fssbxscussql.database.windows.net",
         "trustServerCertificate": true,
@@ -262,22 +285,6 @@
         "password": ""
       },
       {
-        "authenticationType": "Integrated",
-        "connectTimeout": 15,
-        "applicationName": "vscode-mssql",
-        "profileName": "local",
-        "server": ".",
-        "trustServerCertificate": true,
-        "encrypt": "Mandatory",
-        "database": "",
-        "commandTimeout": 30,
-        "profileSource": 0,
-        "groupId": "2D5E7D4A-0F04-43A9-A563-384C8C67D270",
-        "id": "947BB787-4EA2-4EF4-94DD-B9EDDAF1A72F",
-        "user": "",
-        "password": ""
-      },
-      {
         "authenticationType": "AzureMFA",
         "connectTimeout": 30,
         "applicationName": "vscode-mssql",
@@ -291,7 +298,7 @@
         "email": "Mason.Witcraft@INEIGHT.COM",
         "azureAccountToken": "",
         "expiresOn": 1763756167,
-        "groupId": "E306ACBA-DCB5-4808-94B4-98117915230D",
+        "groupId": "81DBD8A1-D7BB-4E1F-B4B1-CD5133E32D51",
         "id": "DFFB7448-E0EA-475C-867D-17CA250E5E64",
         "database": "",
         "password": "",
@@ -303,37 +310,81 @@
         "connectTimeout": 30,
         "applicationName": "vscode-mssql",
         "applicationIntent": "ReadWrite",
-        "profileName": "F3 - Plan",
-        "groupId": "E306ACBA-DCB5-4808-94B4-98117915230D",
-        "server": "fssbxscussql.database.windows.net",
+        "server": "mtqancussql.database.windows.net",
+        "database": "T01-MT-QA-NCUS-DB-I8Core",
+        "user": "Mason Witcraft - Mason.Witcraft@INEIGHT.COM",
+        "commandTimeout": 30,
+        "encrypt": "Mandatory",
+        "profileName": "QA - Core",
+        "groupId": "81DBD8A1-D7BB-4E1F-B4B1-CD5133E32D51",
         "trustServerCertificate": true,
         "accountId": "64019998-6210-4c28-9faa-8d55b6231f67.bd552577-889f-46d7-9b56-f1220279c9c0",
-        "database": "FS-F3-FS-SBX-SCUS-DB-I8Plan",
-        "encrypt": "Mandatory",
-        "user": "Mason Witcraft - Mason.Witcraft@INEIGHT.COM",
         "email": "Mason.Witcraft@INEIGHT.COM",
         "azureAccountToken": "",
-        "expiresOn": 1764811231,
-        "id": "097551AB-D31F-43DC-81D8-D7BF15FD2508",
-        "password": "",
+        "expiresOn": 1764969689,
+        "id": "916A46B0-73F1-44D8-8FCB-6D916F5A6213",
+        "password": ""
+      },
+      {
+        "authenticationType": "AzureMFA",
+        "connectTimeout": 30,
+        "applicationName": "vscode-mssql",
+        "applicationIntent": "ReadWrite",
+        "server": "mtqancussql.database.windows.net",
+        "database": "T01-MT-QA-NCUS-DB-I8Plan",
+        "user": "Mason Witcraft - Mason.Witcraft@INEIGHT.COM",
         "commandTimeout": 30,
+        "encrypt": "Mandatory",
+        "profileName": "QA - Plan",
+        "groupId": "81DBD8A1-D7BB-4E1F-B4B1-CD5133E32D51",
+        "trustServerCertificate": true,
+        "accountId": "64019998-6210-4c28-9faa-8d55b6231f67.bd552577-889f-46d7-9b56-f1220279c9c0",
+        "email": "Mason.Witcraft@INEIGHT.COM",
+        "azureAccountToken": "",
+        "expiresOn": 1765218570,
+        "id": "FC2E198B-383F-4E23-B0B6-ED62DE3B9DFF",
+        "password": "",
         "profileSource": 0
+      },
+      {
+        "authenticationType": "Integrated",
+        "connectTimeout": 15,
+        "applicationName": "vscode-mssql",
+        "profileName": "local",
+        "server": ".",
+        "trustServerCertificate": true,
+        "encrypt": "Mandatory",
+        "database": "",
+        "commandTimeout": 30,
+        "profileSource": 0,
+        "groupId": "ROOT",
+        "id": "947BB787-4EA2-4EF4-94DD-B9EDDAF1A72F",
+        "user": "",
+        "password": ""
       }
     ],
     "mssql.objectExplorer.groupBySchema": false,
     "mssql.openQueryResultsInTabByDefault": true,
     "mssql.openQueryResultsInTabByDefaultDoNotShowPrompt": true,
-    "console-ninja.featureSet": "Community",
-    "turboConsoleLog.addSemicolonInTheEnd": true,
-    "turboConsoleLog.includeFilename": true,
     "editor.inlineSuggest.edits.allowCodeShifting": "never",
     "editor.inlineSuggest.edits.renderSideBySide": "never",
     "github.copilot.nextEditSuggestions.fixes": false,
     "git.blame.statusBarItem.enabled": true,
     "window.title": "${dirty}${rootName}",
     "window.commandCenter": false,
-    "chat.commandCenter.enabled": false,
     "editor.minimap.enabled": false,
-    "typescript.tsserver.experimental.enableProjectDiagnostics": false,
-    "typescript.tsserver.maxTsServerMemory": 4096,
+    "chat.viewSessions.orientation": "stacked",
+    "git.autofetch": true,
+    "diffEditor.useInlineViewWhenSpaceIsLimited": false,
+    "[csharp]": {
+      "editor.defaultFormatter": "ms-dotnettools.csharp",
+      "editor.tabSize": 4
+    },
+    "window.density.editorTabHeight": "compact",
+    "editor.renderWhitespace": "none",
+    "js/ts.tsserver.maxMemory": 8192,
+    "remote.SSH.remotePlatform": {
+      "mac": "macOS"
+    },
+    "diffEditor.renderSideBySide": true,
 }

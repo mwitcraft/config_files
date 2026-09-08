@@ -22,7 +22,7 @@ function src    { . $PROFILE }
 function ex     { explorer $args }
 function n      { notepad $args }
 function vim 	  { nvim $args }
-function cn     { code --new-window $args }
+function c   { code --new-window --profile Minimal $args }
 
 # Maps 'ls' to the git bash 'ls' - I like it more lol
 function ls_git { & 'C:\Program Files\Git\usr\bin\ls.exe' --color=auto -hF $args }
@@ -52,7 +52,7 @@ function ff {
             Start-Process "msedge" -ArgumentList $absolutePath
         } else {
             # Open non-PDF files in a new vscode window
-            code --new-window $absolutePath
+            c $absolutePath
         }
     }
 }
@@ -75,6 +75,21 @@ function Run_PlanUpgrade_Fn {
   runner "C:\Users\Mason.Witcraft\git\Plan\Plan\InEight.Plan.Presentation\PlanUpgrade" "ng build --watch"
 }
 
+Set-Alias Cd_PlanUpgrade Cd_PlanUpgrade_Fn
+function Cd_PlanUpgrade_Fn {
+  Set-Location "C:\Users\Mason.Witcraft\git\Plan\Plan\InEight.Plan.Presentation\PlanUpgrade"
+}
+
+Set-Alias Run_PlanAPI Run_PlanAPI_Fn
+function Run_PlanAPI_Fn {
+  $exe = "C:\Program Files\IIS Express\iisexpress.exe"
+  $args = @(
+    '/config:C:\Users\Mason.Witcraft\git\Plan\PlanSolution\.vs\InEight.Plan\config\applicationhost.config',
+    '/site:InEight.Plan.Presentation-Site'
+  )
+  & $exe $args
+}
+
 Set-Alias Run_Echo Run_Echo_Fn
 function Run_Echo_Fn {
   Write-Host "ECHO... Echo... echo..."
@@ -83,7 +98,9 @@ function Run_Echo_Fn {
 # Define runner-based aliases explicitly
 $runnerAliases = @(
     'Run_PlanUpgrade',
-    'Run_Echo'
+    'Run_PlanAPI',
+    'Cd_PlanUpgrade'
+    'run_echo'
 )
 
 Set-Alias run RunnerAliasMenu
@@ -138,9 +155,15 @@ function RunnerAliasMenu {
             return
         }
 
-        switch ($key.Character) {
-            'j' { if ($index -lt $Aliases.Count - 1) { $index++ } }
-            'k' { if ($index -gt 0) { $index-- } }
+        switch ($key.Key) {
+          # Down
+          { $_ -eq 'DownArrow' -or  $key.Character -eq 'j'} {
+            if ($index -lt $Aliases.Count - 1) { $index++ } 
+          }
+          # Up
+          { $_ -eq 'UpArrow' -or  $key.Character -eq 'k'} {
+            if ($index -gt 0) { $index-- } 
+          }
         }
 
         UpdateHighlight
@@ -158,6 +181,10 @@ function RunnerAliasMenu {
     $selectedAlias = $Aliases[$index]
     Write-Host "Executing $selectedAlias...`n"
     & $selectedAlias
+}
+
+function tls {
+    & "C:\Users\Mason.Witcraft\git\config_files\scripts\terminal\tmux-attach.ps1"
 }
 
 # Import posh-git (allows git branch tab completion)
