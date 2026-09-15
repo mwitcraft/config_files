@@ -18,11 +18,12 @@ oh-my-posh init pwsh --config 'C:\Users\Mason.Witcraft\git\config_files\windows_
 Set-PSReadlineKeyHandler -Key Tab -Function MenuComplete
 
 # Aliases
-function src    { . $PROFILE }
-function ex     { explorer $args }
-function n      { notepad $args }
-function vim 	  { nvim $args }
-function c   { code --new-window --profile Minimal $args }
+function src { . $PROFILE }
+function ex { explorer $args }
+function n { notepad $args }
+function vim { nvim $args }
+function c { code --new-window --profile Minimal $args }
+function log { less -S +F @args }
 
 # Maps 'ls' to the git bash 'ls' - I like it more lol
 function ls_git { & 'C:\Program Files\Git\usr\bin\ls.exe' --color=auto -hF $args }
@@ -50,7 +51,8 @@ function ff {
         if ($absolutePath -match "\.pdf$") {
             # Open PDF in Edge (or your default PDF viewer)
             Start-Process "msedge" -ArgumentList $absolutePath
-        } else {
+        }
+        else {
             # Open non-PDF files in a new vscode window
             c $absolutePath
         }
@@ -58,48 +60,62 @@ function ff {
 }
 
 function runner {
-  param(
-    [Parameter(Mandatory=$true)]
-    [string]$Location,
+    param(
+        [Parameter(Mandatory = $true)]
+        [string]$Location,
 
-    [Parameter(Mandatory=$true)]
-    [string]$Command
-  )
+        [Parameter(Mandatory = $true)]
+        [string]$Command
+    )
 
-  Set-Location $Location
-  Invoke-Expression $Command
+    Set-Location $Location
+    Invoke-Expression $Command
 }
 
 Set-Alias Run_PlanUpgrade Run_PlanUpgrade_Fn
 function Run_PlanUpgrade_Fn {
-  runner "C:\Users\Mason.Witcraft\git\Plan\Plan\InEight.Plan.Presentation\PlanUpgrade" "ng build --watch"
+    runner "C:\Users\Mason.Witcraft\git\Plan\Plan\InEight.Plan.Presentation\PlanUpgrade" "ng build --watch"
 }
 
 Set-Alias Cd_PlanUpgrade Cd_PlanUpgrade_Fn
 function Cd_PlanUpgrade_Fn {
-  Set-Location "C:\Users\Mason.Witcraft\git\Plan\Plan\InEight.Plan.Presentation\PlanUpgrade"
+    Set-Location "C:\Users\Mason.Witcraft\git\Plan\Plan\InEight.Plan.Presentation\PlanUpgrade"
 }
 
 Set-Alias Run_PlanAPI Run_PlanAPI_Fn
 function Run_PlanAPI_Fn {
-  $exe = "C:\Program Files\IIS Express\iisexpress.exe"
-  $args = @(
-    '/config:C:\Users\Mason.Witcraft\git\Plan\PlanSolution\.vs\InEight.Plan\config\applicationhost.config',
-    '/site:InEight.Plan.Presentation-Site'
-  )
-  & $exe $args
+    $exe = "C:\Program Files\IIS Express\iisexpress.exe"
+    $args = @(
+        '/config:C:\Users\Mason.Witcraft\git\Plan\PlanSolution\.vs\InEight.Plan\config\applicationhost.config',
+        '/site:InEight.Plan.Presentation-Site'
+    )
+    & $exe $args
+}
+
+Set-Alias Run_CleanBuildArtifacts Run_CleanBuildArtifacts_Fn
+function Run_CleanBuildArtifacts_Fn {
+    Write-Host "Cleaning build artifacts..."
+    $dirs = @(
+        Get-ChildItem -Path . -Include "bin", "obj" -Recurse -Directory -Force |
+        Sort-Object { $_.FullName.Length } -Descending
+    )
+
+    foreach ($dir in $dirs) {
+        cmd /c rd /s /q "$($dir.FullName)"
+    }
 }
 
 Set-Alias Run_Echo Run_Echo_Fn
 function Run_Echo_Fn {
-  Write-Host "ECHO... Echo... echo..."
+    Write-Host "ECHO... Echo... echo..."
 }
 
 # Define runner-based aliases explicitly
 $runnerAliases = @(
     'Run_PlanUpgrade',
     'Run_PlanAPI',
-    'Cd_PlanUpgrade'
+    'Cd_PlanUpgrade',
+    'Run_CleanBuildArtifacts',
     'run_echo'
 )
 
@@ -126,10 +142,11 @@ function RunnerAliasMenu {
     # Highlight the initial selection
     function UpdateHighlight {
         for ($i = 0; $i -lt $Aliases.Count; $i++) {
-            $host.UI.RawUI.CursorPosition = @{ X=0; Y=$menuStart.Y + $i }
+            $host.UI.RawUI.CursorPosition = @{ X = 0; Y = $menuStart.Y + $i }
             if ($i -eq $index) {
                 Write-Host "> $($Aliases[$i])" -ForegroundColor Cyan
-            } else {
+            }
+            else {
                 Write-Host "  $($Aliases[$i])"
             }
         }
@@ -149,21 +166,21 @@ function RunnerAliasMenu {
         if ($key.Character -eq "") {
             # Clear the menu before exiting
             for ($i = 0; $i -lt $Aliases.Count; $i++) {
-                $host.UI.RawUI.CursorPosition = @{ X=0; Y=$menuStart.Y + $i }
+                $host.UI.RawUI.CursorPosition = @{ X = 0; Y = $menuStart.Y + $i }
                 Write-Host (" " * ($Aliases[$i].Length + 2)) -NoNewline
             }
             return
         }
 
         switch ($key.Key) {
-          # Down
-          { $_ -eq 'DownArrow' -or  $key.Character -eq 'j'} {
-            if ($index -lt $Aliases.Count - 1) { $index++ } 
-          }
-          # Up
-          { $_ -eq 'UpArrow' -or  $key.Character -eq 'k'} {
-            if ($index -gt 0) { $index-- } 
-          }
+            # Down
+            { $_ -eq 'DownArrow' -or $key.Character -eq 'j' } {
+                if ($index -lt $Aliases.Count - 1) { $index++ } 
+            }
+            # Up
+            { $_ -eq 'UpArrow' -or $key.Character -eq 'k' } {
+                if ($index -gt 0) { $index-- } 
+            }
         }
 
         UpdateHighlight
@@ -171,15 +188,14 @@ function RunnerAliasMenu {
 
     # Clear the menu before running the selected alias
     for ($i = 0; $i -lt $Aliases.Count; $i++) {
-        $host.UI.RawUI.CursorPosition = @{ X=0; Y=$menuStart.Y + $i }
+        $host.UI.RawUI.CursorPosition = @{ X = 0; Y = $menuStart.Y + $i }
         Write-Host (" " * ($Aliases[$i].Length + 2))
     }
 
     # Move cursor to where the menu started
-    $host.UI.RawUI.CursorPosition = @{ X=0; Y=$menuStart.Y }
+    $host.UI.RawUI.CursorPosition = @{ X = 0; Y = $menuStart.Y }
 
     $selectedAlias = $Aliases[$index]
-    Write-Host "Executing $selectedAlias...`n"
     & $selectedAlias
 }
 

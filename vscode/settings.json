@@ -88,7 +88,7 @@
     "zenMode.fullScreen": false,
     "zenMode.centerLayout": false,
     "zenMode.hideLineNumbers": false,
-    "editor.lineNumbers": "on",
+    "editor.lineNumbers": "relative",
     "terminal.external.linuxExec": "\\mnt\\c\\Users\\WITCRAFM\\AppData\\Local\\Microsoft\\WindowsApps\\wt.exe",
     "vim.useCtrlKeys": false,
     "security.workspace.trust.untrustedFiles": "open",
